@@ -33,7 +33,6 @@ for markdown_file in recipes/*.md; do
       -c '../styles.css' \
       -o "$output_name/index.html" \
       --data-dir=./
-      # >/dev/null 2>&1
 
     printf '<li class="recipes-list-item"><a href="./%s/">%s</a></li>\n' "$(basename "$output_name")" "$(basename "${markdown_file%.*}")" >> dist/index.html
   fi
