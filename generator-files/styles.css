@@ -1,0 +1,93 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  overflow-y: scroll;
+}
+
+body {
+  font-family: "Source Sans Pro", Helvetica, Arial, sans-serif;
+  max-width: 62.5rem;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 2rem 1rem 3rem 1rem;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Merriweather", Georgia, serif;
+  margin-bottom: 1rem;
+}
+
+h1 {
+  text-align: center;
+}
+
+h2 {
+  font-size: 1.1rem;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+}
+
+h3 {
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+}
+
+p {
+  margin-bottom: 0.5rem;
+}
+
+ul {
+  padding-left: 2rem;
+  margin-bottom: 1rem;
+}
+
+.level2 {
+  margin-bottom: 2rem;
+}
+
+.level3 {
+  margin-bottom: 1rem;
+}
+
+.return-link {
+  display: inline-block;
+  margin-bottom: 1rem;
+}
+
+.index-page-heading {
+  text-align: left;
+}
+
+.recipes-list {
+  list-style: none;
+  padding-left: 0;
+  font-size: 1.2rem;
+}
+
+.recipes-list-item {
+  margin-bottom: 0.5rem;
+}
+
+@media print {
+  body {
+    padding: 0;
+    max-width: 100%;
+  }
+
+  .level2 {
+    margin-bottom: 1rem;
+  }
+
+  .return-link {
+    display: none;
+  }
+}
