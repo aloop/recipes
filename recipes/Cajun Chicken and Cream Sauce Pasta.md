@@ -28,7 +28,7 @@
 - 3 Tb All-Purpose Flour
 - 1½ Cups Milk and ¼ tsp Kosher/Sea Salt, heated to a boil
 - ½ Cup Heavy Cream
-- ½ Cup Parmigiano-Reggiano Cheese, freshly grated
+- 1 Cup Parmigiano-Reggiano Cheese, freshly grated
 - ¼ tsp Lemon Juice
 - Kosher/Sea Salt to taste
 - White Pepper to taste
