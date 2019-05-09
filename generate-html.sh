@@ -29,8 +29,8 @@ for markdown_file in recipes/*.md; do
       -t html5 \
       --section-divs \
       -B generator-files/before-recipe.html \
-      -c 'https://fonts.googleapis.com/css?family=Merriweather|Source+Sans+Pro' \
       -c '../styles.css' \
+      -c 'https://fonts.googleapis.com/css?family=Merriweather|Source+Sans+Pro' \
       -o "$output_name/index.html" \
       --data-dir=./
 
