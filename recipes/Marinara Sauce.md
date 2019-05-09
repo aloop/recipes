@@ -1,20 +1,21 @@
 # Marinara Sauce
 
-### Ingredients
-* 1-2 Tablespoons Olive oil
-* 1/2 Onion, diced
-* 6-8 Garlic cloves, minced
-* 1/2-1 Tablespoons Red Pepper Flakes
-* Dried Herbs (optional)
-* 6 ounces of Tomato paste
-* ~45 ounces of Diced tomatoes
-* 1-3 Bay Leaves
-* 2 Tablespoons Butter
-* Parmigiano-Reggiano rind
-* Kosher Salt
-* Fresh herbs (optional)
+## Ingredients
 
-### Directions
+- 1-2 Tablespoons Olive oil
+- 1/2 Onion, diced
+- 6-8 Garlic cloves, minced
+- 1/2-1 Tablespoons Red Pepper Flakes
+- Dried Herbs (optional)
+- 6 ounces of Tomato paste
+- ~45 ounces of Diced tomatoes
+- 1-3 Bay Leaves
+- 2 Tablespoons Butter
+- Parmigiano-Reggiano rind
+- Kosher Salt
+- Fresh herbs (optional)
+
+## Directions
 
 On medium-low to medium heat, heat the olive oil until shimmering, then add diced onion and cook until translucent, stirring occasionally.
 
@@ -26,6 +27,6 @@ Add diced tomatoes, bay leaves, butter, and Parmigiano-Reggiano rind, stirring u
 
 Near end of cooking, add fresh herbs.
 
-### Alterations
+## Alterations
 
 If you want a meatier sauce, make meatballs and cook in the sauce for the last 15-30 minutes, depending on size of meatballs and desired meatball rigidity.
