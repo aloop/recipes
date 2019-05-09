@@ -23,13 +23,13 @@
 
 ### Sauce
 
-- 2<sup>1/2</sup> Tb Butter
+- 2½ Tb Butter
 - 1-2 Cloves Garlic, Minced
 - 3 Tb All-Purpose Flour
-- 1<sup>1/2</sup> Cups Milk and 1/4 tsp Kosher/Sea Salt, heated to a boil
-- 1/2 Cups Heavy Cream
-- 1/2 Cups Parmigiano-Reggiano Cheese, freshly grated
-- 1/4 tsp Lemon Juice
+- 1½ Cups Milk and ¼ tsp Kosher/Sea Salt, heated to a boil
+- ½ Cup Heavy Cream
+- ½ Cup Parmigiano-Reggiano Cheese, freshly grated
+- ¼ tsp Lemon Juice
 - Kosher/Sea Salt to taste
 - White Pepper to taste
 - Cajun Seasoning to taste
@@ -71,7 +71,7 @@ Remove the roux from the heat, and as soon as it stops bubbling, add the hot mil
 
 Set the saucepan back over moderately high heat and bring to a boil for 1 minute, stirring constantly.
 
-Then add 1/2 cup of cream, lemon juice, and cheese, adding salt, white pepper, and Cajun seasoning to taste. Add garlic salt if desired.
+Then add ½ cup of cream, lemon juice, and cheese, adding salt, white pepper, and Cajun seasoning to taste. Add garlic salt if desired.
 
 ### Cooking the Pasta
 
