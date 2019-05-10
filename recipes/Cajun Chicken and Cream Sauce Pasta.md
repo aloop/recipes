@@ -1,4 +1,8 @@
-# Cajun Chicken and Cream Sauce Pasta
+---
+title: "Cajun Chicken and Cream Sauce Pasta"
+author:
+  - "Anthony Loop"
+---
 
 ## Ingredients
 
@@ -37,6 +41,7 @@
 - Fresh Parsley, Chopped (optional)
 
 ### Pasta
+
 - 1 LB Penne Pasta, or preferred pasta
 
 ## Directions

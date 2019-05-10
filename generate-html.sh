@@ -25,30 +25,32 @@ for markdown_file in recipes/*.md; do
 
     pandoc "$markdown_file" \
       -s \
-      -f gfm \
+      -f markdown \
       -t html5 \
       --section-divs \
-      -B generator-files/before-recipe.html \
-      -c '../styles.css' \
-      -c 'https://fonts.googleapis.com/css?family=Merriweather|Source+Sans+Pro' \
+      --template=generator-files/recipe.template.html \
+      --metadata pagetitle="$(basename "${markdown_file%.*}")" \
       -o "$output_name/index.html" \
-      --data-dir=./
+      --data-dir ./
 
-    printf '<li class="recipes-list-item"><a href="./%s/">%s</a></li>\n' "$(basename "$output_name")" "$(basename "${markdown_file%.*}")" >> dist/index.html
+    printf '<li class="Recipes-item"><a href="./%s/">%s</a></li>\n' \
+      "$(basename "$output_name")" \
+      "$(basename "${markdown_file%.*}")" \
+      >> dist/index.html
   fi
 done
 
 cat generator-files/index.end.html >> dist/index.html
 
 # Try to compress the files ahead of time so the webserver can do less work
-  for dist_file in dist/{*.*,**/*.*}; do
-    if [ -e "$dist_file" ] && [ ! -d "$dist_file" ]; then
-      if command -v brotli > /dev/null 2>&1; then
-        brotli --keep --best "$dist_file"
-      fi
-
-      if command -v gzip > /dev/null 2>&1; then
-        gzip --keep --best "$dist_file"
-      fi
+for dist_file in dist/{*.*,**/*.*}; do
+  if [ -e "$dist_file" ] && [ ! -d "$dist_file" ]; then
+    if command -v brotli > /dev/null 2>&1; then
+      brotli --keep --best "$dist_file"
     fi
-  done
+
+    if command -v gzip > /dev/null 2>&1; then
+      gzip --keep --best "$dist_file"
+    fi
+  fi
+done
