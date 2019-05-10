@@ -1,6 +1,6 @@
 # Steamed Pork Buns
 
-This recipe makes about 20 pork buns.
+This recipe makes about 16 pork buns.
 
 ## Ingredients
 
@@ -47,7 +47,7 @@ For extra flavor, take ¼-⅓ of the pork (before mixing with other ingredients)
 
 ### Making the Buns
 
-Divide the dough evenly into about 20 pieces, then take each piece and lightly roll into a circle, then roll the edges inward towards the center of the dough, without rolling the center of the dough, so that it retains some thickness.
+Divide the dough evenly into about 16 pieces, then take each piece and lightly roll into a circle, then roll the edges inward towards the center of the dough, without rolling the center of the dough, so that it retains some thickness.
 
 Once you have a flattened edge and a thicker center, add about 1 tablespoon of the pork mixture to the center of the dough, then begin folding the dough (difficult to describe in words, many youtube videos demonstrate how to accomplish this).
 
