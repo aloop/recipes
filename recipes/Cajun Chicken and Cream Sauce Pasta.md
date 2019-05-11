@@ -42,7 +42,7 @@ author:
 
 ### Pasta
 
-- 1 LB Penne Pasta, or preferred pasta
+- 1 lb Penne Pasta, or preferred pasta
 
 ## Directions
 
