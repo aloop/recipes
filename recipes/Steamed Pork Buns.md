@@ -10,11 +10,13 @@ This recipe makes about 16 pork buns.
 
 ### Dough
 
-- 500g All-Purpose Flour
-- 8g Instant or Dry Active Yeast
-- 6g Baking Powder
+- 560g All-Purpose Flour
+- 11g Instant or Dry Active Yeast
+- ½ tsp Salt
+- 1 tsp Baking Powder
 - 30g Sugar
-- 270ml Water
+- 30g Neutral Oil
+- 320g Whole Milk
 
 ### Filling
 
