@@ -37,9 +37,9 @@ This recipe makes about 16 pork buns.
 
 ### Making the Dough
 
-Combine dry ingredients into a bowl and add water, then begin mixing the water into the dry ingredients.
+Combine dry ingredients into a bowl and add milk and oil, then begin mixing.
 
-Once the water is well incorporated into the dough, knead the dough for about 8 minutes.
+Once everything is well incorporated, begin to knead the dough for about 8 minutes.
 
 Place in a bowl and cover for 1-2 hours, or until dough has roughly doubled in size.
 
