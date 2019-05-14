@@ -6,15 +6,15 @@ author:
 
 ## Ingredients
 
-- 1-2 Tablespoons Olive oil
+- 1-2 tablespoons Olive oil
 - 1/2 Onion, diced
 - 6-8 Garlic cloves, minced
-- 1/2-1 Tablespoons Red Pepper Flakes
+- 1 tablespoon Red Pepper Flakes
 - Dried Herbs (optional)
 - 6 ounces of Tomato paste
 - ~45 ounces of Diced tomatoes
 - 1-3 Bay Leaves
-- 2 Tablespoons Butter
+- 2 tablespoons Butter
 - Parmigiano-Reggiano rind
 - Kosher Salt
 - Fresh herbs (optional)

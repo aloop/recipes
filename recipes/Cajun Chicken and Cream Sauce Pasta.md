@@ -9,9 +9,9 @@ author:
 ### Brine
 
 - 4 cups (950ml) Filtered Water
-- 4 Tb (60g) Kosher/Sea Salt
-- 2 Tb (30g) White or Brown Sugar
-- 1 tsp (5g) Black Peppercorns
+- 4 tablespoons (60g) Kosher/Sea Salt
+- 2 tablespoons (30g) White or Brown Sugar
+- 1 teaspoons (5g) Black Peppercorns
 - 2-4 Cloves Garlic, Peeled and Smashed
 - Squeeze of Fresh Lemon Juice
 - 1 Bay Leaf
@@ -27,13 +27,13 @@ author:
 
 ### Sauce
 
-- 2½ Tb Butter
+- 2½ tablespoons Butter
 - 1-2 Cloves Garlic, Minced
-- 3 Tb All-Purpose Flour
-- 1½ Cups Milk and ¼ tsp Kosher/Sea Salt, heated to a boil
+- 3 tablespoons All-Purpose Flour
+- 1½ Cups Milk and ¼ teaspoon Kosher/Sea Salt, heated to a boil
 - ½ Cup Heavy Cream
 - 1 Cup Parmigiano-Reggiano Cheese, freshly grated
-- ¼ tsp Lemon Juice
+- ¼ teaspoon Lemon Juice
 - Kosher/Sea Salt to taste
 - White Pepper to taste
 - Cajun Seasoning to taste

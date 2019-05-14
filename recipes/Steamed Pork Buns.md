@@ -4,7 +4,7 @@ author:
   - "Anthony Loop"
 ---
 
-This recipe makes about 16 pork buns.
+This recipe makes about 20 pork buns.
 
 ## Ingredients
 
@@ -12,8 +12,8 @@ This recipe makes about 16 pork buns.
 
 - 560g All-Purpose Flour
 - 11g Instant or Dry Active Yeast
-- ½ tsp Salt
-- 1 tsp Baking Powder
+- ½ teaspoon Salt
+- 1 teaspoon Baking Powder
 - 30g Sugar
 - 30g Neutral Oil
 - 320g Whole Milk
@@ -22,15 +22,15 @@ This recipe makes about 16 pork buns.
 
 - 400g ground or chopped pork, not too lean
 - 20g Spring Onion, chopped
-- ½ tsp Fresh Ginger, finely chopped
-- ½ tsp White Pepper
-- ½ tsp Kosher/Sea Salt
-- 2 Tb Light Soy Sauce
-- 1 tsp Dark Soy Sauce
-- 1 Tb Oyster Sauce
-- 2 Tb Sesame Oil
-- 1 Tb Shaoxing wine
-- 1 Tb Corn Starch
+- ½ teaspoon Fresh Ginger, finely chopped
+- ½ teaspoon White Pepper
+- ½ teaspoon Kosher/Sea Salt
+- 2 tablespoon Light Soy Sauce
+- 1 teaspoon Dark Soy Sauce
+- 1 tablespoon Oyster Sauce
+- 2 tablespoon Sesame Oil
+- 1 tablespoon Shaoxing wine
+- 1 tablespoon Corn Starch
 - 80g water
 
 ## Directions
@@ -53,7 +53,7 @@ For extra flavor, take ¼-⅓ of the pork (before mixing with other ingredients)
 
 ### Making the Buns
 
-Divide the dough evenly into about 16 pieces, then take each piece and lightly roll into a circle, then roll the edges inward towards the center of the dough, without rolling the center of the dough, so that it retains some thickness.
+Divide the dough evenly into about 20 pieces (about 50g each), then take each piece and lightly roll into a circle, then roll the edges inward towards the center of the dough, without rolling the center of the dough, so that it retains some thickness.
 
 Once you have a flattened edge and a thicker center, add about 1 tablespoon of the pork mixture to the center of the dough, then begin folding the dough (difficult to describe in words, many youtube videos demonstrate how to accomplish this).
 
