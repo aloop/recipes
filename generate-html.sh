@@ -8,6 +8,10 @@
 # - sed
 # - cut
 #
+# Optional tools:
+# - brotli
+# - gzip
+#
 ###################
 
 if ! command -v pandoc > /dev/null 2>&1; then
