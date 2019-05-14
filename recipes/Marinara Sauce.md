@@ -21,13 +21,13 @@ author:
 
 ## Directions
 
-On medium-low to medium heat, heat the olive oil until shimmering, then add diced onion and cook until translucent, stirring occasionally.
+On medium-low to medium heat, heat the oil until shimmering, then add diced onion and cook until translucent, stirring occasionally.
 
-Add garlic, cooking until garlic becomes fragrant, 30 seconds to 1 minute.
+Add garlic, cooking until fragrant, 30 seconds to 1 minute.
 
-Add tomato paste, red pepper flakes, and any other dried herbs, and cook, stirring frequently until color of paste darkens, 3-6 minutes.
+Add tomato paste, red pepper flakes, and any dried herbs, cooking while stirring frequently until color of paste darkens, 3-6 minutes.
 
-Add diced tomatoes, bay leaves, butter, and Parmigiano-Reggiano rind, stirring until butter has fully melted. Simmer for 1 or more hours, depending on tomato acidity, tasting occasionally, adding salt when necessary.
+Add diced tomatoes, bay leaves, butter, and Parmigiano-Reggiano rind, stirring until butter has fully melted. Simmer for 1 or more hours, depending on tomato acidity. Taste occasionally, adding salt when necessary.
 
 Near end of cooking, add fresh herbs.
 
