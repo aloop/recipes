@@ -60,9 +60,9 @@ Remove Baking sheet from the oven and place peppers in a bowl or baking dish and
 
 ### Cooking the Chicken
 
-Remove chicken from brine and pat dry, taking care that no peppercorns are lodged in the meat. Discard remaining brine.
+Remove chicken from brine, rinsing chicken if desired, then pat dry, taking care that no peppercorns are lodged in the meat. Discard remaining brine.
 
-Season chicken with desired amount of Cajun seasoning, then bake or grill at 450°F until internal temp registers 165°F (75°C).
+Season chicken with desired amount of Cajun seasoning, then bake or grill at 450°F until internal temp registers 165°F.
 
 When ready to add to pasta, cut into desired size and mix into pasta.
 
