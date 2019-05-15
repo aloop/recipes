@@ -42,19 +42,17 @@ if [ -z "$styles_hash" ]; then
   exit 1
 fi
 
-# Cleanup files from previous builds
-rm -r dist
-mkdir dist
+mkdir new_dist
 
-cp generator-files/styles.css "dist/styles-${styles_hash}.css"
-cp generator-files/favicon.ico dist/
-cp generator-files/index.start.html dist/index.html
+cp generator-files/styles.css "new_dist/styles-${styles_hash}.css"
+cp generator-files/favicon.ico new_dist/
+cp generator-files/index.start.html new_dist/index.html
 
 for markdown_file in recipes/*.md; do
   if [ -e "$markdown_file" ] && [ ! -d "$markdown_file" ]; then
-    output_name="$(slugify "$(printf '%s' "$markdown_file" | sed -e 's/^recipes/dist/' -e 's/\.md$//')")"
+    output_name="$(slugify "$(printf '%s' "$markdown_file" | sed -e 's/^recipes/new_dist/' -e 's/\.md$//')")"
 
-    mkdir dist/"$(basename "$output_name")"
+    mkdir new_dist/"$(basename "$output_name")"
 
     pandoc "$markdown_file" \
       -s \
@@ -70,18 +68,18 @@ for markdown_file in recipes/*.md; do
     printf '<li class="Recipes-item"><a href="./%s/">%s</a></li>\n' \
       "$(basename "$output_name")" \
       "$(basename "${markdown_file%.*}")" \
-      >> dist/index.html
+      >> new_dist/index.html
   fi
 done
 
 # Finish constructing the index page
-cat generator-files/index.end.html >> dist/index.html
+cat generator-files/index.end.html >> new_dist/index.html
 
 # Add the first 16 characters from the styles.css hash to its filename
-sed -i "s/STYLESDOTCSS_HASH/${styles_hash}/g" dist/*.html dist/**/*.html
+sed -i "s/STYLESDOTCSS_HASH/${styles_hash}/g" new_dist/*.html new_dist/**/*.html
 
 # Try to compress the files ahead of time so the webserver can do less work
-for dist_file in dist/*.* dist/**/*.*; do
+for dist_file in new_dist/*.* new_dist/**/*.*; do
   if [ -e "$dist_file" ] && [ ! -d "$dist_file" ]; then
     if command -v brotli > /dev/null 2>&1; then
       brotli --keep --best "$dist_file"
@@ -92,3 +90,8 @@ for dist_file in dist/*.* dist/**/*.*; do
     fi
   fi
 done
+
+# Move new files into place and remove old ones
+mv dist old_dist
+mv new_dist dist
+rm -rf old_dist
