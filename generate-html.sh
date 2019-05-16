@@ -1,4 +1,4 @@
-#!/usr/bin/env sh
+#!/usr/bin/env bash
 
 ###################
 #
@@ -76,10 +76,10 @@ done
 cat generator-files/index.end.html >> new_dist/index.html
 
 # Add the first 16 characters from the styles.css hash to its filename
-sed -i "s/STYLESDOTCSS_HASH/${styles_hash}/g" new_dist/*.html new_dist/**/*.html
+sed -i "s/STYLESDOTCSS_HASH/${styles_hash}/g" new_dist/{*,**/*}.html
 
 # Try to compress the files ahead of time so the webserver can do less work
-for dist_file in new_dist/*.* new_dist/**/*.*; do
+for dist_file in new_dist/{*,**/*}.{html,css,js}; do
   if [ -e "$dist_file" ] && [ ! -d "$dist_file" ]; then
     if command -v brotli > /dev/null 2>&1; then
       brotli --keep --best "$dist_file"
