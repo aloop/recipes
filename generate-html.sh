@@ -45,7 +45,7 @@ fi
 mkdir new_dist
 
 cp generator-files/styles.css "new_dist/styles-${styles_hash}.css"
-cp generator-files/favicon.ico new_dist/
+cp generator-files/{favicon.ico,robots.txt} new_dist/
 cp generator-files/index.start.html new_dist/index.html
 
 for markdown_file in recipes/*.md; do
