@@ -14,6 +14,8 @@
 #
 ###################
 
+set -euo pipefail
+
 if ! command -v pandoc > /dev/null 2>&1; then
   echo "Make sure pandoc is installed, then try again"
   exit 1
