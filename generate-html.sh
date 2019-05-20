@@ -21,12 +21,6 @@ if ! command -v pandoc > /dev/null 2>&1; then
   exit 1
 fi
 
-slugify() (
-  filename="$(basename "$1")"
-  slugified_name="$(printf '%s' "${filename%.*}" | sed -e 's/\&/and/' -e 's/[^[:alnum:]]/-/g' | tr -s '-' | sed 's/.*/\L&/')"
-  printf '%s%s' "${1%"$filename"}" "$slugified_name"
-)
-
 # Generate a hash of styles.css to allow for long-term caching and simple invalidation.
 if command -v sha256sum >/dev/null 2>&1; then
   styles_hash="$(sha256sum generator-files/styles.css | cut -c1-16)"
