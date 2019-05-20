@@ -51,25 +51,25 @@ cp generator-files/{favicon.ico,robots.txt} new_dist/
 cp generator-files/index.start.html new_dist/index.html
 
 for markdown_file in recipes/*.md; do
-  if [ -e "$markdown_file" ] && [ ! -d "$markdown_file" ]; then
-    output_name="$(slugify "$(printf '%s' "$markdown_file" | sed -e 's/^recipes/new_dist/' -e 's/\.md$//')")"
+  if [ -e "${markdown_file}" ] && [ ! -d "${markdown_file}" ]; then
+    recipe_title="$(pandoc "${markdown_file}" -f markdown --template=generator-files/meta-title.template | tr -d "\n")"
+    output_name="new_dist/$(basename "${markdown_file}" | sed 's/\.md$//')"
 
-    mkdir new_dist/"$(basename "$output_name")"
+    mkdir "${output_name}"
 
-    pandoc "$markdown_file" \
+    pandoc "${markdown_file}" \
       -s \
       -f markdown \
       -t html5 \
       --section-divs \
       --template=generator-files/recipe.template.html \
-      --metadata pagetitle="$(basename "${markdown_file%.*}")" \
-      -o "$output_name/index.html" \
+      -o "${output_name}/index.html" \
       --data-dir ./
 
     # Add a link for this recipe to our index page
     printf '<li class="Recipes-item"><a href="./%s/">%s</a></li>\n' \
-      "$(basename "$output_name")" \
-      "$(basename "${markdown_file%.*}")" \
+      "$(basename "${output_name}")" \
+      "${recipe_title}" \
       >> new_dist/index.html
   fi
 done
