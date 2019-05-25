@@ -38,7 +38,9 @@ if [ -z "$styles_hash" ]; then
   exit 1
 fi
 
-mkdir new_dist
+# Cleanup possible remnants
+rm -rf new_dist
+mkdir -p new_dist
 
 cp generator-files/styles.css "new_dist/styles-${styles_hash}.css"
 cp generator-files/{favicon.ico,robots.txt} new_dist/
@@ -87,7 +89,13 @@ for dist_file in new_dist/{*,**/*}.{html,css,js}; do
   fi
 done
 
-# Move new files into place and remove old ones
-mv dist old_dist
+# Move new files into place and remove old ones, if there are any.
+if [ -d dist.backup ]; then
+  rm -rf dist.backup
+fi
+
+if [ -d dist ]; then
+  mv dist dist.backup
+fi
+
 mv new_dist dist
-rm -rf old_dist
