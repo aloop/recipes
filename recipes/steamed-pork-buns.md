@@ -15,7 +15,7 @@ This recipe makes about 20 pork buns.
 - ½ teaspoon Salt
 - 1 teaspoon Baking Powder
 - 30g Sugar
-- 30g Neutral Oil
+- 30g Vegetable Oil (or other neutral-flavored oil)
 - 320g Whole Milk
 
 ### Filling
