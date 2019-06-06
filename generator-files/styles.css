@@ -83,21 +83,6 @@ a[href]:hover {
   margin-bottom: 1rem;
 }
 
-@media not print and (prefers-color-scheme: dark) {
-  body {
-    background-color: #222;
-    color: #fff;
-  }
-
-  h2 {
-    border-bottom-color: rgba(255, 255, 255, 0.1);
-  }
-
-  a[href] {
-    color: #57c1f5;
-  }
-}
-
 @media print {
   body {
     padding: 0;
