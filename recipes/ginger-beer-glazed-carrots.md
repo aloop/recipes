@@ -6,12 +6,12 @@ author:
 
 ## Ingredients
 
-- 1 lb Carrots, about 7 medium, peeled and cut ¼ inch on the bias
+- 1 lb Carrots, about 7 medium, peeled and cut ¼-inch on the bias
 - 2 tablespoons Unsalted Butter
 - Heavy pinch Kosher Salt
 - 1 cup Ginger Beer
 - ½ teaspoon Chili Powder
-- 1 tablespoon fresh chopped parsley
+- 1 tablespoon Fresh Parsley, Chopped
 
 ## Directions
 
