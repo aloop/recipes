@@ -4,27 +4,24 @@ title: "Butterscotch Brownies"
 
 ## Ingredients
 
-- ¾ cup butter
-- 2¼ cups firmly packed brown sugar
-- 2½ cups flour
-- 2½ tsp baking powder
-- ½ tsp salt
-- 3 eggs
-- 1 cup chocolate chips
-- 1 cup butterscotch chips
+- ¾ cup Butter
+- 2¼ cups Firmly packed Dark Brown Sugar
+- 2½ cups All-Purpose Flour
+- 2½ teaspoons Baking Powder
+- ½ teaspoon Kosher Salt
+- 3 Eggs
+- 1 teaspoon Pure Vanilla Extract
+- 1 cup Chocolate Chips
+- 1 cup Butterscotch Chips
 
 ## Directions
 
 Preheat oven to 350°f
 
-Melt butter in saucepan. Stir in brown sugar. Let cool about 10 minutes.
+Melt butter in saucepan and stir in brown sugar. Take off the heat and let cool for about 10 minutes.
 
-Sift together flour, baking powder, and salt. Set aside.
+Beat eggs into sugar mixture, one at a time. Then add vanilla and sift flour, baking powder, and salt into mixture and mix well. Mix in chocolate chips and butterscotch chips.
 
-Beat eggs into sugar mixture, one at a time.
-
-Add and mix well: the flour mixture, chocolate chips, and nuts
-
-Spread in greased 15" x 10" x 1" pan (I always used 13 by 9)
+Spread out mixture into a greased 9" x 13" dish.
 
 Bake 25-30 minutes.

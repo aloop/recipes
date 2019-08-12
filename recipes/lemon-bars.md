@@ -6,24 +6,24 @@ title: "Lemon Bars"
 
 ### Shortbread Crust
 
-- 1 cup (230g; 2 sticks) unsalted butter, melted
-- ½ cup (100g) granulated sugar
-- 2 teaspoons pure vanilla extract
-- ½ teaspoon salt
-- 2 cups + 2 Tablespoons (265g) all-purpose flour
+- 1 cup (230g; 2 sticks) Unsalted Butter, melted
+- ½ cup (100g) Granulated Sugar
+- 2 teaspoons Pure Vanilla Extract
+- ½ teaspoon Kosher Salt
+- 2 cups + 2 Tablespoons (265g) All-Purpose Flour
 
 ### Lemon Filling
 
-- 2 cups (400g) granulated sugar
-- 6 Tablespoons (48g) all-purpose flour
-- 6 large eggs
-- 1 cup (240ml) lemon juice (about 4 lemons)
+- 2 cups (400g) Granulated Sugar
+- 6 Tablespoons (48g) All-Purpose Flour
+- 6 Large Eggs
+- 1 cup (240ml) Lemon Juice (about 4 lemons)
 
 ## Directions
 
 ### Preparation
 
-Preheat the oven to 325°F (163°C). Line the bottom and sides of a 9×13 baking pan\* with parchment paper, leaving an overhang on the sides to lift the finished bars out (makes cutting easier!). Set aside.
+Preheat the oven to 325°F (163°C). Line the bottom and sides of a 9" × 13" baking pan with parchment paper, leaving an overhang on the sides to lift the finished bars out. Set aside.
 
 ### Making the Crust
 
