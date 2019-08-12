@@ -115,3 +115,19 @@ a[href]:hover {
     display: none;
   }
 }
+
+.Search {
+  display: block;
+  width: 100%;
+  padding: 10px 15px;
+  margin-bottom: 0.5rem;
+  text-align: center;
+}
+
+.hidden {
+  display: none !important;
+}
+
+html.no-js .hidden\@no-js {
+  display: none !important;
+}
