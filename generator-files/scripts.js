@@ -35,7 +35,7 @@ for (const recipe of document.querySelectorAll(".Recipes > li > a")) {
 
 const handleSearch = ev => {
   // Show all recipes and return early if the search is blank
-  if (ev.target.value === "") {
+  if (ev.target.value.trim() === "") {
     for (const { el } of recipes) {
       el.parentElement.classList.remove(...classes);
     }
