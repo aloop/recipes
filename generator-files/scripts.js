@@ -17,14 +17,14 @@ const fuzzyLetterRegexReducer = (result, value) => {
 };
 
 const generateFuzzyRegex = str =>
-  new RegExp(str.split("").reduce(fuzzyLetterRegexReducer, ""), "i");
+  new RegExp(str.split("").reduce(fuzzyLetterRegexReducer, ""), "ui");
 
 const searchInput = document.querySelector("#search");
 
 const recipes = [];
 
 for (const recipe of document.querySelectorAll(".Recipes > li > a")) {
-  const title = recipe.innerText;
+  const title = recipe.innerText.normalize();
 
   recipes.push({
     title,
@@ -43,7 +43,10 @@ const handleSearch = ev => {
     return;
   }
 
-  const searchQuery = ev.target.value.toLowerCase();
+  const searchQuery = ev.target.value
+    .trim()
+    .normalize()
+    .toLowerCase();
 
   const fuzzyRegex = generateFuzzyRegex(searchQuery);
 
@@ -52,7 +55,7 @@ const handleSearch = ev => {
       el.parentElement.classList.remove(...classes);
       // Assign a higher weight to exact matches
       el.parentElement.classList.add(weightedMatchClass);
-    } else if (fuzzyRegex.test(title)) {
+    } else if (fuzzyRegex.test(escapedTitle)) {
       el.parentElement.classList.remove(...classes);
     } else {
       el.parentElement.classList.add(...classes);
