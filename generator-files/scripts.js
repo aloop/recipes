@@ -21,6 +21,36 @@ const fuzzyLetterRegexReducer = (result, value) => {
 const generateFuzzyRegex = str =>
   new RegExp(str.split("").reduce(fuzzyLetterRegexReducer, ""), "ui");
 
+const debounce = (fn, delay = 100) => {
+  let initialTimestamp = null;
+  let currentAnimationFrame = null;
+
+  return (...args) => {
+    // Every time this function is called, that means a new event fired.
+    // We should cancel the last one if it's still pending.
+    if (currentAnimationFrame) {
+      cancelAnimationFrame(currentAnimationFrame);
+    }
+
+    const tick = timestamp => {
+      if (
+        (initialTimestamp && timestamp - initialTimestamp >= delay) ||
+        delay <= 0
+      ) {
+        initialTimestamp = null;
+        fn(...args);
+      } else if (!initialTimestamp) {
+        initialTimestamp = timestamp;
+        currentAnimationFrame = requestAnimationFrame(tick);
+      } else {
+        currentAnimationFrame = requestAnimationFrame(tick);
+      }
+    };
+
+    currentAnimationFrame = requestAnimationFrame(tick);
+  };
+};
+
 const searchInput = document.querySelector("#search");
 
 const recipes = [];
@@ -68,5 +98,5 @@ const handleSearch = ev => {
 };
 
 if (searchInput !== null) {
-  searchInput.addEventListener("input", handleSearch);
+  searchInput.addEventListener("input", debounce(handleSearch, 32));
 }
