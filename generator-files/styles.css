@@ -65,13 +65,20 @@ a[href]:hover {
 }
 
 .Recipes {
+  display: flex;
+  flex-direction: column;
   list-style: none;
   padding-left: 0;
   font-size: 1.2rem;
 }
 
 .Recipes-item {
+  order: 1;
   margin-bottom: 0.5rem;
+}
+
+.Recipes-item.is-sequenceMatch {
+  order: 0;
 }
 
 .Recipe-title {
@@ -119,7 +126,8 @@ a[href]:hover {
 .Search {
   display: block;
   width: 100%;
-  padding: 10px 15px;
+  font-size: 1rem;
+  padding: 0.75rem;
   margin-bottom: 0.5rem;
   text-align: center;
 }

@@ -1,3 +1,6 @@
+const weightedMatchClass = "is-sequenceMatch";
+const classes = ["hidden", weightedMatchClass];
+
 const specialCharsRegex = /[-\/\\^$*+?.()|[\]{}]/g;
 const fancyDoubleQuotesRegex = /\u201C|\u201D/g;
 const fancySingleQuotesRegex = /\u2018|\u2019/g;
@@ -8,7 +11,13 @@ const escapeStringForRegex = str =>
     .replace(fancyDoubleQuotesRegex, '"')
     .replace(fancySingleQuotesRegex, "'");
 
-const createRegex = (a, b) => `${a}[^${b}]*${b}`;
+const fuzzyLetterRegexReducer = (result, value) => {
+  const safeValue = escapeStringForRegex(value);
+  return `${result}[^${safeValue}]*${safeValue}`;
+};
+
+const generateFuzzyRegex = str =>
+  new RegExp(str.split("").reduce(fuzzyLetterRegexReducer, ""), "i");
 
 const searchInput = document.querySelector("#search");
 
@@ -28,24 +37,25 @@ const handleSearch = ev => {
   // Show all recipes and return early if the search is blank
   if (ev.target.value === "") {
     for (const { el } of recipes) {
-      el.parentElement.classList.remove("hidden");
+      el.parentElement.classList.remove(...classes);
     }
 
     return;
   }
 
-  const valueRegex = new RegExp(
-    ev.target.value
-      .toLowerCase()
-      .split("")
-      .reduce(createRegex)
-  );
+  const searchQuery = ev.target.value.toLowerCase();
 
-  for (const recipe of recipes) {
-    if (valueRegex.test(recipe.escapedTitle.toLowerCase())) {
-      recipe.el.parentElement.classList.remove("hidden");
+  const fuzzyRegex = generateFuzzyRegex(searchQuery);
+
+  for (const { title, escapedTitle, el } of recipes) {
+    if (title.toLowerCase().includes(searchQuery)) {
+      el.parentElement.classList.remove(...classes);
+      // Assign a higher weight to exact matches
+      el.parentElement.classList.add(weightedMatchClass);
+    } else if (fuzzyRegex.test(title)) {
+      el.parentElement.classList.remove(...classes);
     } else {
-      recipe.el.parentElement.classList.add("hidden");
+      el.parentElement.classList.add(...classes);
     }
   }
 };
