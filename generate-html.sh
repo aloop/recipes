@@ -21,34 +21,41 @@ if ! command -v pandoc > /dev/null 2>&1; then
   exit 1
 fi
 
-# Generate a hash of styles.css and scripts.js to allow for long-term caching
-# and simple invalidation.
-if command -v sha256sum >/dev/null 2>&1; then
-  styles_hash="$(sha256sum generator-files/styles.css | cut -c1-16)"
-  scripts_hash="$(sha256sum generator-files/scripts.js | cut -c1-16)"
-elif command -v shasum; then
-  styles_hash="$(shasum -a 256 generator-files/styles.css | cut -c1-16)"
-  scripts_hash="$(shasum -a 256 generator-files/scripts.js | cut -c1-16)"
-elif command -v openssl; then
-  styles_hash="$(openssl sha256 generator-files/styles.css | cut -d ' ' -f 2 | cut -c1-16)"
-  scripts_hash="$(openssl sha256 generator-files/scripts.js | cut -d ' ' -f 2 | cut -c1-16)"
-else
-  printf "Could not generate sha256 hash of styles.css or scripts.js, make sure sha256sum, shasum, or openssl are available on your system\n"
-  exit 1
-fi
+generate_hash() {
+  if [ ! -f "$1" ]; then
+    printf "File \"%s\" does not exist" "$1" >&2
+    exit 1
+  elif command -v sha256sum >/dev/null 2>&1; then
+    sha256sum "$1" | cut -c1-16
+  elif command -v shasum; then
+    shasum -a 256 "$1" | cut -c1-16
+  elif command -v openssl; then
+    openssl sha256 "$1" | cut -d ' ' -f 2 | cut -c1-16
+  else
+    printf "Could not generate sha256 hash of \"%s\", make sure sha256sum, shasum, or openssl are available on your system\n" "$1" >&2
+    exit 1
+  fi
+}
 
-if [ -z "$styles_hash" ] || [ -z "$scripts_hash" ]; then
-  printf "sha256 hash was empty, an unknown error occurred"
-  exit 1
-fi
+styles_hash="$(generate_hash generator-files/styles.css)"
+maindotjs_hash="$(generate_hash generator-files/scripts/main.js)"
+utilsdotjs_hash="$(generate_hash generator-files/scripts/modules/utils.js)"
+fuzzymatchdotjs_hash="$(generate_hash generator-files/scripts/modules/fuzzy-match.js)"
+searchjs_hash="$(generate_hash generator-files/scripts/modules/search.js)"
 
-# Cleanup possible remnants
+# Cleanup possible remnants and recreate destination dirs
 rm -rf new_dist
-mkdir -p new_dist
+mkdir -p new_dist/scripts/modules
 
+# Copy files
 cp generator-files/styles.css "new_dist/styles-${styles_hash}.css"
-cp generator-files/scripts.js "new_dist/scripts-${scripts_hash}.js"
+cp generator-files/scripts/main.js "new_dist/scripts/main-${maindotjs_hash}.js"
+cp generator-files/scripts/modules/utils.js "new_dist/scripts/modules/utils-${utilsdotjs_hash}.js"
+cp generator-files/scripts/modules/fuzzy-match.js "new_dist/scripts/modules/fuzzy-match-${fuzzymatchdotjs_hash}.js"
+cp generator-files/scripts/modules/search.js "new_dist/scripts/modules/search-${searchjs_hash}.js"
 cp generator-files/{favicon.ico,robots.txt} new_dist/
+
+# Start building markdown files into html
 
 recipe_links=""
 
@@ -73,14 +80,18 @@ for markdown_file in recipes/*.md; do
   fi
 done
 
-# Abuse printf replacement as templating
+# Abuse printf for templating
 printf "$(cat generator-files/index.template.html)" "${recipe_links}" >> new_dist/index.html
 
 # Add the first 16 characters from the styles.css hash to its filename
 sed -i \
   -e "s/STYLESDOTCSS_HASH/${styles_hash}/g" \
-  -e "s/SCRIPTSDOTJS_HASH/${scripts_hash}/g" \
-  new_dist/{*,**/*}.html
+  -e "s/MAINDOTJS_HASH/${maindotjs_hash}/g" \
+  -e "s/UTILSDOTJS_HASH/${utilsdotjs_hash}/g" \
+  -e "s/FUZZYMATCHDOTJS_HASH/${fuzzymatchdotjs_hash}/g" \
+  -e "s/SEARCHDOTJS_HASH/${searchjs_hash}/g" \
+  new_dist/{*,**/*}.html \
+  new_dist/scripts/{*,**/*}.js
 
 # Try to compress the files ahead of time so the webserver can do less work
 for dist_file in new_dist/{*,**/*}.{html,css,js}; do
