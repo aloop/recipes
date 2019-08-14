@@ -1,5 +1,5 @@
 // Handle searching if the search input exists
-const searchInput = document.querySelector("#search");
+const searchInput = document.querySelector("#search_field");
 
 if (searchInput !== null) {
   import("./modules/search-SEARCHDOTJS_HASH.js").then(
