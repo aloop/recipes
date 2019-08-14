@@ -93,39 +93,6 @@ a[href]:hover {
   margin-bottom: 1rem;
 }
 
-@media print {
-  body {
-    padding: 0;
-    max-width: 100%;
-    line-height: 1.2;
-  }
-
-  .level2 {
-    margin-bottom: 1rem;
-  }
-
-  .level3 {
-    /*
-    Doesn't work ideally with long sections of .level3 elements,
-    but `page-break-after: avoid` and `page-break-before: avoid`
-    aren't supported in any major browsers for some reason...
-    */
-    page-break-inside: avoid;
-  }
-
-  h3 {
-    margin-bottom: 0.5rem;
-  }
-
-  .Recipe-title {
-    font-size: 1.5rem;
-  }
-
-  .return-link {
-    display: none;
-  }
-}
-
 .Search {
   display: block;
   width: 100%;
@@ -173,5 +140,38 @@ html.no-js .hidden\@no-js {
   .Search {
     background-color: #222;
     color: #eee;
+  }
+}
+
+@media print {
+  body {
+    padding: 0;
+    max-width: 100%;
+    line-height: 1.2;
+  }
+
+  .level2 {
+    margin-bottom: 1rem;
+  }
+
+  .level3 {
+    /*
+    Doesn't work ideally with long sections of .level3 elements,
+    but `page-break-after: avoid` and `page-break-before: avoid`
+    aren't supported in any major browsers for some reason...
+    */
+    page-break-inside: avoid;
+  }
+
+  h3 {
+    margin-bottom: 0.5rem;
+  }
+
+  .Recipe-title {
+    font-size: 1.5rem;
+  }
+
+  .return-link {
+    display: none;
   }
 }
