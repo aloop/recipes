@@ -31,7 +31,8 @@ h6 {
 
 h2 {
   font-size: 1.25rem;
-  border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+  padding-bottom: 0.25rem;
+  border-bottom: 0.125rem solid rgba(0, 0, 0, 0.1);
 }
 
 h3 {
@@ -151,4 +152,24 @@ a[href]:hover {
 
 html.no-js .hidden\@no-js {
   display: none !important;
+}
+
+@media not print and (prefers-color-scheme: dark) {
+  html {
+    background-color: #111;
+    color: #fff;
+  }
+
+  a[href] {
+    color: hsl(216, 85%, 72%);
+  }
+
+  h2 {
+    border-bottom-color: rgba(255, 255, 255, 1);
+  }
+
+  .Search {
+    background-color: #222;
+    color: #fff;
+  }
 }
