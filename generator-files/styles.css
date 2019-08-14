@@ -149,6 +149,18 @@ html.no-js .hidden\@no-js {
     line-height: 1.2;
   }
 
+  h3 {
+    margin-bottom: 0.5rem;
+  }
+
+  a[href] {
+    color: #000;
+  }
+
+  a[href]::after {
+    content: " (" attr(href) ")";
+  }
+
   .level2 {
     margin-bottom: 1rem;
   }
@@ -160,10 +172,6 @@ html.no-js .hidden\@no-js {
     aren't supported in any major browsers for some reason...
     */
     page-break-inside: avoid;
-  }
-
-  h3 {
-    margin-bottom: 0.5rem;
   }
 
   .Recipe-title {
