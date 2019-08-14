@@ -133,11 +133,15 @@ a[href]:hover {
   background-color: #fff;
   color: #000;
   border: none;
+  border-radius: 0;
+  -webkit-appearance: none;
+  -webkit-border-radius: none;
   box-shadow: 0 0 2px rgba(0, 0, 0, 0.2), 0 3px 5px rgba(0, 0, 0, 0.1);
   transition: box-shadow 150ms ease-in-out;
 }
 
-.Search:focus {
+.Search:focus,
+.Search:active {
   box-shadow: 0 0 2px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.15);
 }
 
