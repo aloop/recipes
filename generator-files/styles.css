@@ -88,8 +88,7 @@ a[href]:hover {
   font-size: 2rem;
 }
 
-.return-link {
-  display: inline-block;
+.SiteHeader {
   margin-bottom: 1rem;
 }
 
@@ -171,7 +170,7 @@ html.no-js .hidden\@no-js {
     font-size: 1.5rem;
   }
 
-  .return-link {
-    display: none;
+  .hidden\@print {
+    display: none !important;
   }
 }
