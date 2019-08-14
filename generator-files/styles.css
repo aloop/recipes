@@ -157,7 +157,7 @@ html.no-js .hidden\@no-js {
 @media not print and (prefers-color-scheme: dark) {
   html {
     background-color: #111;
-    color: #fff;
+    color: #eee;
   }
 
   a[href] {
@@ -170,6 +170,6 @@ html.no-js .hidden\@no-js {
 
   .Search {
     background-color: #222;
-    color: #fff;
+    color: #eee;
   }
 }
