@@ -128,8 +128,17 @@ a[href]:hover {
   width: 100%;
   font-size: 1rem;
   padding: 0.75rem;
-  margin-bottom: 0.5rem;
+  margin-bottom: 1.25rem;
   text-align: center;
+  background-color: #fff;
+  color: #000;
+  border: none;
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.2), 0 3px 5px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 150ms ease-in-out;
+}
+
+.Search:focus {
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.15);
 }
 
 .hidden {
