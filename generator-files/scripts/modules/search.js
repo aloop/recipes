@@ -48,4 +48,4 @@ export const searchListener = ev => {
   }
 };
 
-export const createSearchListener = () => debounce(searchListener);
+export const createSearchListener = () => debounce(searchListener, 50);
