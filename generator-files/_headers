@@ -1,10 +1,24 @@
 # For all pages
-/
+/*
   Link: </styles-STYLESDOTCSS_HASH.css>; rel=preload; as=style
   Link: </scripts/main-MAINDOTJS_HASH.js>; rel=preload; as=script
+  X-Frame-Options: "DENY"
+  X-Content-Type-Options: "nosniff"
+  X-XSS-Protection: "1; mode=block"
+  Referrer-Policy: "strict-origin-when-cross-origin"
+
 
 # For index only
-/index.html
+/
   Link: </scripts/modules/fuzzy-match-FUZZYMATCHDOTJS_HASH.js>; rel=preload; as=script
   Link: </scripts/modules/utils-UTILSDOTJS_HASH.js>; rel=preload; as=script
   Link: </scripts/modules/search-SEARCHDOTJS_HASH.js>; rel=preload; as=script
+
+/favicon.ico
+  Cache-Control: public, max-age=604800
+
+/*.css
+  Cache-Control: public, max-age=604800
+
+/*.js
+  Cache-Control: public, max-age=604800
