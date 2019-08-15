@@ -1,0 +1,10 @@
+# For all pages
+/
+  Link: </styles-STYLESDOTCSS_HASH.css>; rel=preload; as=style
+  Link: </scripts/main-MAINDOTJS_HASH.js>; rel=preload; as=script
+
+# For index only
+/index.html
+  Link: </scripts/modules/fuzzy-match-FUZZYMATCHDOTJS_HASH.js>; rel=preload; as=script
+  Link: </scripts/modules/utils-UTILSDOTJS_HASH.js>; rel=preload; as=script
+  Link: </scripts/modules/search-SEARCHDOTJS_HASH.js>; rel=preload; as=script
