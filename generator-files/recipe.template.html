@@ -16,16 +16,15 @@
     <script>
       document.documentElement.classList.remove("no-js");
     </script>
-    <link href="../styles-STYLESDOTCSS_HASH.css" rel="stylesheet" />
-    $for(css)$
-    <link rel="stylesheet" href="$css$" />
-    $endfor$
     <script
       defer
       type="module"
       src="../scripts/main-MAINDOTJS_HASH.js"
     ></script>
-    $for(header-includes)$ $header-includes$ $endfor$
+    <link href="../styles-STYLESDOTCSS_HASH.css" rel="stylesheet" />
+    $for(css)$
+    <link rel="stylesheet" href="$css$" />
+    $endfor$ $for(header-includes)$ $header-includes$ $endfor$
   </head>
   <body>
     <header class="SiteHeader hidden@print">
