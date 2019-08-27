@@ -1,3 +1,3 @@
 [build]
   publish = "dist"
-  command = "./generate-html.sh"
+  command = "./build.sh"
