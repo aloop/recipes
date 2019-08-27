@@ -3,10 +3,12 @@
 ###################
 #
 # Tools required:
+# - bash
 # - pandoc
-# - sha256sum
+# - sha256sum or shasum or openssl
 # - sed
 # - cut
+# - tr
 #
 # Optional tools:
 # - brotli
@@ -15,6 +17,8 @@
 ###################
 
 set -euo pipefail
+
+shopt -s globstar
 
 if ! command -v pandoc > /dev/null 2>&1; then
   echo "Make sure pandoc is installed, then try again"
@@ -39,6 +43,7 @@ generate_hash() {
 
 styles_hash="$(generate_hash generator-files/styles.css)"
 maindotjs_hash="$(generate_hash generator-files/scripts/main.js)"
+serviceworkerdotjs_hash="$(generate_hash generator-files/service-worker.js)"
 utilsdotjs_hash="$(generate_hash generator-files/scripts/modules/utils.js)"
 fuzzymatchdotjs_hash="$(generate_hash generator-files/scripts/modules/fuzzy-match.js)"
 searchjs_hash="$(generate_hash generator-files/scripts/modules/search.js)"
@@ -53,7 +58,7 @@ cp generator-files/scripts/main.js "new_dist/scripts/main-${maindotjs_hash}.js"
 cp generator-files/scripts/modules/utils.js "new_dist/scripts/modules/utils-${utilsdotjs_hash}.js"
 cp generator-files/scripts/modules/fuzzy-match.js "new_dist/scripts/modules/fuzzy-match-${fuzzymatchdotjs_hash}.js"
 cp generator-files/scripts/modules/search.js "new_dist/scripts/modules/search-${searchjs_hash}.js"
-cp generator-files/{favicon.ico,robots.txt,_headers} new_dist/
+cp generator-files/{favicon.ico,robots.txt,_headers,offline.html,service-worker.js} new_dist/
 
 # Start building markdown files into html
 
@@ -90,12 +95,12 @@ sed -i \
   -e "s/UTILSDOTJS_HASH/${utilsdotjs_hash}/g" \
   -e "s/FUZZYMATCHDOTJS_HASH/${fuzzymatchdotjs_hash}/g" \
   -e "s/SEARCHDOTJS_HASH/${searchjs_hash}/g" \
-  new_dist/{*,**/*}.html \
-  new_dist/scripts/{*,**/*}.js \
+  -e "s/SERVICEWORKERDOTJS_HASH/${serviceworkerdotjs_hash}/g" \
+  new_dist/**/*.{html,js} \
   new_dist/_headers
 
 # Try to compress the files ahead of time so the webserver can do less work
-for dist_file in new_dist/{*,**/*}.{html,css,js}; do
+for dist_file in new_dist/**/*.{html,css,js}; do
   if [ -e "$dist_file" ] && [ ! -d "$dist_file" ]; then
     if command -v brotli > /dev/null 2>&1; then
       brotli --keep --best "$dist_file"
