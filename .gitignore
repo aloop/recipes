@@ -1,3 +1,3 @@
-dist
-dist.backup
-new_dist
+public
+public.backup
+public.temp

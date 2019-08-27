@@ -25,6 +25,10 @@ if ! command -v pandoc > /dev/null 2>&1; then
   exit 1
 fi
 
+DEST_TEMP_DIR="public.temp"
+DEST_DIR="public"
+DEST_BACKUP_DIR="public.backup"
+
 generate_hash() {
   if [ ! -f "$1" ]; then
     printf "File \"%s\" does not exist" "$1" >&2
@@ -49,16 +53,16 @@ fuzzymatchdotjs_hash="$(generate_hash generator-files/scripts/modules/fuzzy-matc
 searchjs_hash="$(generate_hash generator-files/scripts/modules/search.js)"
 
 # Cleanup possible remnants and recreate destination dirs
-rm -rf new_dist
-mkdir -p new_dist/scripts/modules
+rm -rf -- "$DEST_TEMP_DIR"
+mkdir -p "$DEST_TEMP_DIR/scripts/modules"
 
 # Copy files
-cp generator-files/styles.css "new_dist/styles-${styles_hash}.css"
-cp generator-files/scripts/main.js "new_dist/scripts/main-${maindotjs_hash}.js"
-cp generator-files/scripts/modules/utils.js "new_dist/scripts/modules/utils-${utilsdotjs_hash}.js"
-cp generator-files/scripts/modules/fuzzy-match.js "new_dist/scripts/modules/fuzzy-match-${fuzzymatchdotjs_hash}.js"
-cp generator-files/scripts/modules/search.js "new_dist/scripts/modules/search-${searchjs_hash}.js"
-cp generator-files/{favicon.ico,robots.txt,_headers,offline.html,service-worker.js} new_dist/
+cp generator-files/styles.css "$DEST_TEMP_DIR/styles-${styles_hash}.css"
+cp generator-files/scripts/main.js "$DEST_TEMP_DIR/scripts/main-${maindotjs_hash}.js"
+cp generator-files/scripts/modules/utils.js "$DEST_TEMP_DIR/scripts/modules/utils-${utilsdotjs_hash}.js"
+cp generator-files/scripts/modules/fuzzy-match.js "$DEST_TEMP_DIR/scripts/modules/fuzzy-match-${fuzzymatchdotjs_hash}.js"
+cp generator-files/scripts/modules/search.js "$DEST_TEMP_DIR/scripts/modules/search-${searchjs_hash}.js"
+cp generator-files/{favicon.ico,robots.txt,_headers,offline.html,service-worker.js} "$DEST_TEMP_DIR/"
 
 # Start building markdown files into html
 
@@ -67,7 +71,7 @@ recipe_links=""
 for markdown_file in recipes/*.md; do
   if [ -e "${markdown_file}" ] && [ ! -d "${markdown_file}" ]; then
     recipe_title="$(pandoc "${markdown_file}" -f markdown --template=generator-files/meta-title.template | tr -d "\n")"
-    output_name="new_dist/$(basename "${markdown_file}" | sed 's/\.md$//')"
+    output_name="$DEST_TEMP_DIR/$(basename "${markdown_file}" | sed 's/\.md$//')"
 
     mkdir "${output_name}"
 
@@ -86,7 +90,7 @@ for markdown_file in recipes/*.md; do
 done
 
 # Abuse printf for templating
-printf "$(cat generator-files/index.template.html)" "${recipe_links}" >> new_dist/index.html
+printf "$(cat generator-files/index.template.html)" "${recipe_links}" >> "$DEST_TEMP_DIR"/index.html
 
 # Add the first 16 characters from the styles.css hash to its filename
 sed -i \
@@ -96,11 +100,11 @@ sed -i \
   -e "s/FUZZYMATCHDOTJS_HASH/${fuzzymatchdotjs_hash}/g" \
   -e "s/SEARCHDOTJS_HASH/${searchjs_hash}/g" \
   -e "s/SERVICEWORKERDOTJS_HASH/${serviceworkerdotjs_hash}/g" \
-  new_dist/**/*.{html,js} \
-  new_dist/_headers
+  "$DEST_TEMP_DIR"/**/*.{html,js} \
+  "$DEST_TEMP_DIR"/_headers
 
 # Try to compress the files ahead of time so the webserver can do less work
-for dist_file in new_dist/**/*.{html,css,js}; do
+for dist_file in "$DEST_TEMP_DIR"/**/*.{html,css,js}; do
   if [ -e "$dist_file" ] && [ ! -d "$dist_file" ]; then
     if command -v brotli > /dev/null 2>&1; then
       brotli --keep --best "$dist_file"
@@ -113,12 +117,12 @@ for dist_file in new_dist/**/*.{html,css,js}; do
 done
 
 # Move new files into place and remove old ones, if there are any.
-if [ -d dist.backup ]; then
-  rm -rf dist.backup
+if [ -d "$DEST_BACKUP_DIR" ]; then
+  rm -rf -- "$DEST_BACKUP_DIR"
 fi
 
-if [ -d dist ]; then
-  mv dist dist.backup
+if [ -d "$DEST_DIR" ]; then
+  mv "$DEST_DIR" "$DEST_BACKUP_DIR"
 fi
 
-mv new_dist dist
+mv "$DEST_TEMP_DIR" "$DEST_DIR"
