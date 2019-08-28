@@ -45,24 +45,24 @@ generate_hash() {
   fi
 }
 
-styles_hash="$(generate_hash generator-files/styles.css)"
-maindotjs_hash="$(generate_hash generator-files/scripts/main.js)"
-serviceworkerdotjs_hash="$(generate_hash generator-files/service-worker.js)"
-utilsdotjs_hash="$(generate_hash generator-files/scripts/modules/utils.js)"
-fuzzymatchdotjs_hash="$(generate_hash generator-files/scripts/modules/fuzzy-match.js)"
-searchjs_hash="$(generate_hash generator-files/scripts/modules/search.js)"
+styles_hash="$(generate_hash src/styles.css)"
+maindotjs_hash="$(generate_hash src/scripts/main.js)"
+serviceworkerdotjs_hash="$(generate_hash src/service-worker.js)"
+utilsdotjs_hash="$(generate_hash src/scripts/modules/utils.js)"
+fuzzymatchdotjs_hash="$(generate_hash src/scripts/modules/fuzzy-match.js)"
+searchjs_hash="$(generate_hash src/scripts/modules/search.js)"
 
 # Cleanup possible remnants and recreate destination dirs
 rm -rf -- "$DEST_TEMP_DIR"
 mkdir -p "$DEST_TEMP_DIR/scripts/modules"
 
 # Copy files
-cp generator-files/styles.css "$DEST_TEMP_DIR/styles-${styles_hash}.css"
-cp generator-files/scripts/main.js "$DEST_TEMP_DIR/scripts/main-${maindotjs_hash}.js"
-cp generator-files/scripts/modules/utils.js "$DEST_TEMP_DIR/scripts/modules/utils-${utilsdotjs_hash}.js"
-cp generator-files/scripts/modules/fuzzy-match.js "$DEST_TEMP_DIR/scripts/modules/fuzzy-match-${fuzzymatchdotjs_hash}.js"
-cp generator-files/scripts/modules/search.js "$DEST_TEMP_DIR/scripts/modules/search-${searchjs_hash}.js"
-cp generator-files/{favicon.ico,robots.txt,_headers,offline.html,service-worker.js} "$DEST_TEMP_DIR/"
+cp src/styles.css "$DEST_TEMP_DIR/styles-${styles_hash}.css"
+cp src/scripts/main.js "$DEST_TEMP_DIR/scripts/main-${maindotjs_hash}.js"
+cp src/scripts/modules/utils.js "$DEST_TEMP_DIR/scripts/modules/utils-${utilsdotjs_hash}.js"
+cp src/scripts/modules/fuzzy-match.js "$DEST_TEMP_DIR/scripts/modules/fuzzy-match-${fuzzymatchdotjs_hash}.js"
+cp src/scripts/modules/search.js "$DEST_TEMP_DIR/scripts/modules/search-${searchjs_hash}.js"
+cp src/{favicon.ico,robots.txt,_headers,offline.html,service-worker.js} "$DEST_TEMP_DIR/"
 
 # Start building markdown files into html
 
@@ -70,7 +70,7 @@ recipe_links=""
 
 for markdown_file in recipes/*.md; do
   if [ -e "${markdown_file}" ] && [ ! -d "${markdown_file}" ]; then
-    recipe_title="$(pandoc "${markdown_file}" -f markdown --template=generator-files/meta-title.template | tr -d "\n")"
+    recipe_title="$(pandoc "${markdown_file}" -f markdown --template=src/templates/meta-title.template | tr -d "\n")"
     output_name="$DEST_TEMP_DIR/$(basename "${markdown_file}" | sed 's/\.md$//')"
 
     mkdir "${output_name}"
@@ -80,7 +80,7 @@ for markdown_file in recipes/*.md; do
       -f markdown \
       -t html5 \
       --section-divs \
-      --template=generator-files/recipe.template.html \
+      --template=src/templates/recipe.html \
       -o "${output_name}/index.html" \
       --data-dir ./
 
@@ -90,7 +90,7 @@ for markdown_file in recipes/*.md; do
 done
 
 # Abuse printf for templating
-printf "$(cat generator-files/index.template.html)" "${recipe_links}" >> "$DEST_TEMP_DIR"/index.html
+printf "$(cat src/templates/index.html)" "${recipe_links}" >> "$DEST_TEMP_DIR"/index.html
 
 # Add the first 16 characters from the styles.css hash to its filename
 sed -i \
