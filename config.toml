@@ -1,0 +1,6 @@
+baseURL = "/"
+languageCode = "en-us"
+title = "Recipes"
+minify = true
+enableRobotsTXT = true
+disableKinds = ["taxonomy", "taxonomyTerms", "RSS", "sitemap"]

@@ -1,0 +1,21 @@
+{{ define "main" }}
+<h1>{{ .Site.Title }}</h1>
+<section id="recipes-search">
+  <input
+    placeholder="Search for a recipe"
+    class="Search hidden@no-js hidden@print"
+    id="recipes-search-field"
+    type="search"
+    autofocus
+  />
+</section>
+<section id="recipes-list">
+  <ul class="Recipes">
+    {{- range where .Site.RegularPages "Type" "recipes" }}
+    <li class="Recipes-item">
+      <a href="{{ .Permalink }}">{{ .Title }}</a>
+    </li>
+    {{- end }}
+  </ul>
+</section>
+{{ end }}

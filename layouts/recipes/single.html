@@ -1,0 +1,12 @@
+{{ define "before-main" }}
+<header class="SiteHeader hidden@print">
+  <a href="/">&#8617; Return To Recipes</a>
+</header>
+{{ end }}
+
+{{ define "main" }}
+<article class="Recipe">
+  <h1 class="Recipe-title">{{ .Title }}</h1>
+  {{ .Content }}
+</article>
+{{ end }}

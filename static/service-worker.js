@@ -1,4 +1,4 @@
-const CACHE_VERSION = "2";
+const CACHE_VERSION = "3";
 const OFFLINE_PAGE_URL = "/offline.html";
 const CACHES = {
   offline: `offline-v${CACHE_VERSION}`

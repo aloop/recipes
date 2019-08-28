@@ -8,7 +8,9 @@
     <script>
       window.addEventListener("load", () => {
         window.addEventListener("online", () => {
-          window.location.reload();
+          if (window.location.pathname !== "/offline.html") {
+            window.location.reload();
+          }
         });
       });
     </script>
