@@ -1,7 +1,53 @@
-const CACHE_VERSION = "1";
+const CACHE_VERSION = "2";
 const OFFLINE_PAGE_URL = "/offline.html";
 const CACHES = {
   offline: `offline-v${CACHE_VERSION}`
+};
+const CACHE_NAMES = Object.values(CACHES);
+
+const activate = async () => {
+  if (self.registration.navigationPreload) {
+    console.log("navigationPreload supported");
+    await self.registration.navigationPreload.enable();
+  }
+
+  const cacheNames = await caches.keys();
+
+  return Promise.all(
+    cacheNames.map(cacheName => {
+      if (!CACHE_NAMES.includes(cacheName)) {
+        return caches.delete(cacheName);
+      }
+    })
+  );
+};
+
+const fetchResponder = async event => {
+  const cache = await caches.open(CACHES.offline);
+
+  let response = await event.preloadResponse;
+
+  if (!response) {
+    try {
+      response = await fetch(event.request);
+    } catch {
+      // Fetch should only throw when it gets an invalid response of some sort,
+      // so there shouldn't be any problem showing the offline page without
+      // any real checks
+      return cache.match(OFFLINE_PAGE_URL);
+    }
+  }
+
+  const clonedResponse = response.clone();
+
+  // Add to the cache if the response code is in the 200 range
+  if (response.ok) {
+    cache.put(event.request, clonedResponse);
+  }
+
+  const cachedResponse = await caches.match(event.request);
+
+  return cachedResponse || response;
 };
 
 self.addEventListener("install", event => {
@@ -11,19 +57,7 @@ self.addEventListener("install", event => {
 });
 
 self.addEventListener("activate", event => {
-  const currentCacheNames = Object.values(CACHES);
-
-  event.waitUntil(
-    caches.keys().then(cacheNames =>
-      Promise.all(
-        cacheNames.map(cacheName => {
-          if (!currentCacheNames.includes(cacheName)) {
-            return caches.delete(cacheName);
-          }
-        })
-      )
-    )
-  );
+  event.waitUntil(activate());
 });
 
 /*
@@ -34,26 +68,5 @@ self.addEventListener("fetch", event => {
     return;
   }
 
-  event.respondWith(
-    caches.open(CACHES.offline).then(cache => {
-      return cache.match(event.request).then(cached => {
-        const request = fetch(event.request)
-          .then(response => {
-            const clonedResponse = response.clone();
-            // Add to the cache if the response code is in the 200 range
-            if (response.ok) {
-              cache.put(event.request, clonedResponse);
-            }
-
-            return response;
-          })
-          // Fetch should only throw when it gets an invalid response of some sort,
-          // so there shouldn't be any problem showing the offline page without
-          // any real checks
-          .catch(() => cache.match(OFFLINE_PAGE_URL));
-
-        return cached || request;
-      });
-    })
-  );
+  event.respondWith(fetchResponder(event));
 });
