@@ -121,7 +121,7 @@ html.no-js .hidden\@no-js {
   display: none !important;
 }
 
-@media not print and (prefers-color-scheme: dark) {
+@media screen and (prefers-color-scheme: dark) {
   html {
     background-color: #111;
     color: #eee;
