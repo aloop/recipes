@@ -1,0 +1,20 @@
+{{ define "head" }}
+  <meta name="robots" content="noindex" />
+  {{- with resources.Get "css/offline-inline.scss" | toCSS | minify }}
+  <style>
+    {{ .Content | safeCSS }}
+  </style>
+  {{ end -}}
+
+  {{- with resources.Get "js/offline-inline.js" | minify }}
+  <script>
+    {{ .Content | safeJS }}
+  </script>
+  {{ end -}}
+{{ end }}
+
+{{ define "canonical" }}<!---->{{ end }}
+
+{{ define "main" }}
+  {{ .Content }}
+{{ end }}

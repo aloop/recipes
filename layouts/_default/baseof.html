@@ -1,13 +1,40 @@
 <!DOCTYPE html>
 <html class="no-js" lang="{{ .Site.LanguageCode }}">
   <head>
-    {{- partial "head.html" . -}}
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    {{- block "meta" . }}{{ end }}
+    <title>
+      {{- block "title" . }}
+        {{- if .IsHome }}
+          {{- .Site.Title -}}
+        {{ end }}
+        {{- if not .IsHome }}
+          {{- .Title }} - {{ .Site.Title -}}
+        {{ end -}}
+      {{ end -}}
+    </title>
+
+    {{- with resources.Get "js/head-inline.js" | minify }}
+    <script>
+      {{ .Content | safeJS }}
+    </script>
+    {{ end -}}
+
+    {{ $script := resources.Get "js/main.js" | minify | fingerprint -}}
+    <script defer src="{{ $script.Permalink }}"></script>
+
+    {{ $style := resources.Get "css/styles.scss" | toCSS | minify | fingerprint -}}
+    <link rel="stylesheet" href="{{ $style.Permalink }}" />
+
+    {{- block "canonical" . }}
+      <link rel="canonical" href="{{ .Permalink }}">
+    {{ end -}}
+
+    {{ block "head" . }}{{ end }}
   </head>
   <body>
-    {{- partial "header.html" . -}}
     {{- block "before-main" . }}{{ end -}}
     <main>{{- block "main" . }}{{ end -}}</main>
-    {{- block "after-main" . }}{{ end -}}
-    {{- partial "footer.html" . }}
   </body>
 </html>
