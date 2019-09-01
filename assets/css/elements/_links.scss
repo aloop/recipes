@@ -1,0 +1,8 @@
+a[href] {
+  color: var(--link-color);
+
+  &:hover,
+  &:active {
+    text-decoration: none;
+  }
+}

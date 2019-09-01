@@ -1,0 +1,16 @@
+.Recipes {
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  padding-left: 0;
+  font-size: 1.2rem;
+}
+
+.Recipes-item {
+  order: 1;
+  margin-bottom: 0.5rem;
+
+  &.is-sequenceMatch {
+    order: 0;
+  }
+}

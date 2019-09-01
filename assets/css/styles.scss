@@ -1,170 +1,19 @@
-*,
-*::before,
-*::after {
-  box-sizing: inherit;
-  margin: 0;
-  padding: 0;
-}
+@import "_variables.scss";
 
-html {
-  box-sizing: border-box;
-  overflow-y: scroll;
-}
+@import "_properties.scss";
 
-body {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-    "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji",
-    "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  line-height: 1.4;
-  max-width: 62.5rem;
-  margin: auto;
-  padding: 2rem 1rem 3rem 1rem;
-}
+@import "generic/_reset.scss";
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-weight: 700;
-  margin-bottom: 1rem;
-}
+@import "elements/_body.scss";
+@import "elements/_headings.scss";
+@import "elements/_links.scss";
+@import "elements/_paragraphs.scss";
+@import "elements/_lists.scss";
+@import "elements/_forms.scss";
 
-h2 {
-  font-size: 1.25rem;
-  padding-bottom: 0.25rem;
-  border-bottom: 0.125rem solid rgba(0, 0, 0, 0.1);
-}
+@import "components/_site-header.scss";
+@import "components/_recipes.scss";
+@import "components/_recipe.scss";
+@import "components/_search.scss";
 
-h3 {
-  font-size: 1rem;
-  font-style: italic;
-}
-
-p {
-  margin-bottom: 0.5rem;
-}
-
-ul {
-  padding-left: 2rem;
-  margin-bottom: 1rem;
-}
-
-a[href] {
-  color: #1368e4;
-}
-
-a[href]:hover {
-  text-decoration: none;
-}
-
-button,
-input,
-textarea,
-select {
-  font-family: inherit;
-}
-
-.Recipes {
-  display: flex;
-  flex-direction: column;
-  list-style: none;
-  padding-left: 0;
-  font-size: 1.2rem;
-}
-
-.Recipes-item {
-  order: 1;
-  margin-bottom: 0.5rem;
-}
-
-.Recipes-item.is-sequenceMatch {
-  order: 0;
-}
-
-.Recipe-title {
-  font-size: 2rem;
-}
-
-.SiteHeader {
-  margin-bottom: 1rem;
-}
-
-.Search {
-  display: block;
-  width: 100%;
-  font-size: 1rem;
-  padding: 0.75rem;
-  margin-bottom: 1.25rem;
-  text-align: center;
-  background-color: #fff;
-  color: #000;
-  border: none;
-  border-radius: 0;
-  -webkit-appearance: none;
-  -webkit-border-radius: none;
-  box-shadow: 0 0 2px rgba(0, 0, 0, 0.2), 0 3px 5px rgba(0, 0, 0, 0.1);
-  transition: box-shadow 150ms ease-in-out;
-}
-
-.Search:focus,
-.Search:active {
-  box-shadow: 0 0 2px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.15);
-}
-
-.hidden {
-  display: none !important;
-}
-
-html.no-js .hidden\@no-js {
-  display: none !important;
-}
-
-@media screen and (prefers-color-scheme: dark) {
-  html {
-    background-color: #111;
-    color: #eee;
-  }
-
-  a[href] {
-    color: hsl(216, 85%, 72%);
-  }
-
-  h2 {
-    border-bottom-color: rgba(255, 255, 255, 1);
-  }
-
-  .Search {
-    background-color: #222;
-    color: #eee;
-  }
-}
-
-@media print {
-  body {
-    padding: 0;
-    max-width: 100%;
-    line-height: 1.2;
-  }
-
-  h3 {
-    margin-bottom: 0.5rem;
-  }
-
-  a[href] {
-    color: #000;
-  }
-
-  a[href]::after {
-    content: " (" attr(href) ")";
-  }
-
-  .Recipe-title {
-    font-size: 1.5rem;
-  }
-
-  .hidden\@print {
-    display: none !important;
-  }
-}
+@import "utilities/_hidden.scss";

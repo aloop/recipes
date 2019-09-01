@@ -1,0 +1,32 @@
+@mixin light-properties {
+  --bg-color: #fff;
+  --text-color: #000;
+  --link-color: #1368e4;
+  --search-field-bg: #fff;
+  --search-field-text-color: #000;
+  --heading-border-color: rgba(0, 0, 0, 0.1);
+}
+
+@mixin dark-properties {
+  --bg-color: #111;
+  --text-color: #eee;
+  --link-color: hsl(216, 85%, 72%);
+  --search-field-bg: #222;
+  --search-field-text-color: #eee;
+  --heading-border-color: rgba(255, 255, 255, 1);
+}
+
+:root,
+html.light {
+  @include light-properties;
+}
+
+html.dark {
+  @include dark-properties;
+}
+
+@media screen and (prefers-color-scheme: dark) {
+  :root {
+    @include dark-properties;
+  }
+}

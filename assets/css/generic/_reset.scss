@@ -1,0 +1,39 @@
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+button,
+input[type="button"],
+input[type="submit"],
+input[type="reset"] {
+  -webkit-appearance: button;
+  cursor: pointer;
+}
+
+input[type="file"],
+label[for] {
+  cursor: pointer;
+}
+
+textarea {
+  overflow: auto;
+}
+
+textarea,
+optgroup,
+button,
+select,
+input {
+  font: inherit;
+  line-height: inherit;
+  border-radius: 0;
+}
