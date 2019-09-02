@@ -6,9 +6,11 @@ let useDarkMode = localStorage.getItem("use-dark-mode");
 if (useDarkMode === null) {
   if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
     useDarkMode = true;
+  } else {
+    useDarkMode = false;
   }
 
-  useDarkMode = false;
+  localStorage.setItem("use-dark-mode", useDarkMode ? "yes" : "no");
 } else {
   useDarkMode = useDarkMode === "yes";
 }
