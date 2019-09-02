@@ -24,8 +24,10 @@ html.light {
   @include light-properties;
 }
 
-html.dark {
-  @include dark-properties;
+@media screen {
+  html.dark {
+    @include dark-properties;
+  }
 }
 
 @media screen and (prefers-color-scheme: dark) {
