@@ -4,7 +4,7 @@ d.classList.remove("no-js");
 let useDarkMode = localStorage.getItem("use-dark-mode");
 
 if (useDarkMode === null) {
-  if (window.matchMedia("prefers-color-scheme: dark")) {
+  if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
     useDarkMode = true;
   }
 
