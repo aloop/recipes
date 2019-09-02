@@ -4,3 +4,8 @@ textarea,
 select {
   font-family: inherit;
 }
+
+label,
+input[type="checkbox"] {
+  cursor: pointer;
+}

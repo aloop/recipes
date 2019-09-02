@@ -34,7 +34,12 @@
     {{ block "head" . }}{{ end }}
   </head>
   <body>
-    {{- block "before-main" . }}{{ end -}}
+    {{- block "header" . }}
+      <header class="SiteHeader hidden@print">
+      {{- block "header-inside" . }}{{ end -}}
+      {{ partialCached "dark-mode-toggle" . }}
+      </header>
+    {{ end -}}
     <main>{{- block "main" . }}{{ end -}}</main>
   </body>
 </html>

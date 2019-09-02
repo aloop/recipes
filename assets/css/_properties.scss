@@ -5,6 +5,8 @@
   --search-field-bg: #fff;
   --search-field-text-color: #000;
   --heading-border-color: rgba(0, 0, 0, 0.1);
+  --checkbox-bg: #333;
+  --checkbox-focused: hsl(216, 85%, 72%);
 }
 
 @mixin dark-properties {
@@ -14,6 +16,7 @@
   --search-field-bg: #222;
   --search-field-text-color: #eee;
   --heading-border-color: rgba(255, 255, 255, 1);
+  --checkbox-bg: hsl(216, 85%, 72%);
 }
 
 :root,

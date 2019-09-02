@@ -138,3 +138,38 @@ const searchInput = document.getElementById("recipes-search-field");
 if (searchInput !== null) {
   searchInput.addEventListener("input", createSearchListener());
 }
+
+// Handle dark mode toggle
+
+const enableDarkMode = isOn => {
+  if (Boolean(isOn)) {
+    document.documentElement.classList.add("dark");
+    document.documentElement.classList.remove("light");
+  } else {
+    document.documentElement.classList.add("light");
+    document.documentElement.classList.remove("dark");
+  }
+};
+
+const darkModeToggle = document.getElementById("dark-mode-toggle");
+
+if (darkModeToggle) {
+  darkModeToggle.checked = useDarkMode;
+
+  darkModeToggle.addEventListener("input", ev => {
+    const { checked } = ev.target;
+
+    enableDarkMode(checked);
+
+    localStorage.setItem("use-dark-mode", checked ? "yes" : "no");
+  });
+}
+
+window.addEventListener("storage", ev => {
+  if (ev.key === "use-dark-mode") {
+    enableDarkMode(ev.newValue === "yes");
+    if (darkModeToggle) {
+      darkModeToggle.checked = ev.newValue === "yes";
+    }
+  }
+});
