@@ -1,16 +1,16 @@
 html {
   box-sizing: border-box;
+  min-height: 100%;
   background-color: var(--bg-color);
+}
+
+body {
+  min-height: 100vh;
+  padding: $body-padding;
+  margin: auto;
   color: var(--color);
   font-family: $font-family;
   line-height: $line-height;
   max-width: $site-width;
-  min-height: 100%;
-  padding: $body-padding;
-  margin: auto;
   overflow-y: scroll;
-}
-
-body {
-  min-height: 100%;
 }
