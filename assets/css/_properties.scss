@@ -1,37 +1,23 @@
-@mixin light-properties {
-  --bg-color: #fff;
-  --text-color: #000;
-  --link-color: #1368e4;
-  --search-field-bg: #fff;
-  --search-field-text-color: #000;
-  --heading-border-color: rgba(0, 0, 0, 0.1);
-  --checkbox-bg: #333;
-  --checkbox-focused: hsl(216, 85%, 72%);
-}
-
-@mixin dark-properties {
-  --bg-color: #111;
-  --text-color: #eee;
-  --link-color: hsl(216, 85%, 72%);
-  --search-field-bg: #222;
-  --search-field-text-color: #eee;
-  --heading-border-color: rgba(255, 255, 255, 1);
-  --checkbox-bg: hsl(216, 85%, 72%);
-}
-
 :root,
 html.light {
-  @include light-properties;
+  --bg-color: #fff;
+  --color: #181b1f;
+  --link-color: #2a78ed;
+  --search-bg: #fff;
+  --search-color: #181b1f;
+  --heading-border-color: #0000001a;
+  --checkbox-bg: #333;
+  --checkbox-focused: #70a9ff;
 }
 
 @media screen {
   html.dark {
-    @include dark-properties;
-  }
-}
-
-@media screen and (prefers-color-scheme: dark) {
-  :root {
-    @include dark-properties;
+    --bg-color: #181b1f;
+    --color: #eee;
+    --link-color: #70a9ff;
+    --search-bg: #282c33;
+    --search-color: #eee;
+    --heading-border-color: #ffffff1a;
+    --checkbox-bg: #70a9ff;
   }
 }
