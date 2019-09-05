@@ -1,22 +1,16 @@
-a[href] {
+a {
   display: inline;
   color: var(--link-color);
   text-decoration: none;
   border-bottom: 0.0625em solid currentColor;
   border-radius: 0.125rem;
   padding: 0.125rem;
-  background: repeat-x bottom/100% var(--link-bg-size, 0%)
-    linear-gradient(var(--link-color), var(--link-color));
   box-decoration-break: clone;
-  transition-property: color, background-size, border-color;
-  transition-duration: 100ms;
-  transition-timing-function: ease-in-out;
 
   &:hover,
-  &:active,
   &:focus {
-    --link-bg-size: 100%;
     color: var(--bg-color);
     border-bottom-color: var(--link-color);
+    background: var(--link-color);
   }
 }
