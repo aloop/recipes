@@ -9,12 +9,12 @@ h6 {
 }
 
 h2 {
-  font-size: 1.25rem;
+  font-size: var(--h2-size);
   padding: 0.25rem 0;
   border-bottom: 0.125rem solid var(--heading-border-color);
 }
 
 h3 {
-  font-size: 1rem;
+  font-size: var(--h3-size);
   font-style: italic;
 }

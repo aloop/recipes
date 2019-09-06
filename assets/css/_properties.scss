@@ -4,6 +4,8 @@ html {
     "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji",
     "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   --line-height: 1.4;
+  --h2-size: 1.4rem;
+  --h3-size: 1.1rem;
   // Sizing
   --space: 1.25rem;
   --li-margin: #{1.25 * 0.15}rem;
@@ -36,6 +38,8 @@ html {
 
 @media print {
   html {
+    --h2-size: 1.25rem;
+    --h3-size: 1rem;
     --space: 0.5rem;
     --li-margin: 0;
   }
