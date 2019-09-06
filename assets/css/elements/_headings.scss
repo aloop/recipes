@@ -5,12 +5,12 @@ h4,
 h5,
 h6 {
   font-weight: 700;
-  margin-bottom: 1rem;
+  margin: var(--space) 0;
 }
 
 h2 {
   font-size: 1.25rem;
-  padding-bottom: 0.25rem;
+  padding: 0.25rem 0;
   border-bottom: 0.125rem solid var(--heading-border-color);
 }
 

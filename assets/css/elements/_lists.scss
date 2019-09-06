@@ -1,5 +1,9 @@
 ul {
   padding-left: 2rem;
-  margin-bottom: 1rem;
+  margin-bottom: var(--space);
   list-style-type: square;
+}
+
+li {
+  margin-bottom: var(--li-margin);
 }

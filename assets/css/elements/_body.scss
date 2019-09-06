@@ -6,11 +6,11 @@ html {
 
 body {
   min-height: 100vh;
-  padding: $body-padding;
+  padding: var(--body-padding);
   margin: auto;
   color: var(--color);
-  font-family: $font-family;
-  line-height: $line-height;
-  max-width: $site-width;
+  font-family: var(--font);
+  line-height: var(--line-height);
+  max-width: var(--page-width);
   overflow-y: scroll;
 }

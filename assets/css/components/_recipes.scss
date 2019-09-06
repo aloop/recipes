@@ -8,7 +8,7 @@
 
 .Recipes-item {
   order: 1;
-  margin-bottom: 0.5rem;
+  margin-bottom: calc(var(--space) * 0.75);
 
   &.is-sequenceMatch {
     order: 0;
