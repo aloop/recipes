@@ -1,9 +1,11 @@
-const CACHE_VERSION = "5";
+const CACHE_VERSION = "6";
 const OFFLINE_PAGE_URL = "/offline.html";
 const CACHES = {
   offline: `offline-v${CACHE_VERSION}`
 };
 const CACHE_NAMES = Object.values(CACHES);
+
+const CACHE_FIRST_TYPES = ["document"];
 
 const activate = async () => {
   if ("navigationPreload" in self.registration) {
@@ -22,9 +24,7 @@ const activate = async () => {
   ]);
 };
 
-const fetchResponder = async event => {
-  const cache = await caches.open(CACHES.offline);
-
+const fetchFromNetwork = async (event, cache) => {
   let response;
 
   try {
@@ -47,7 +47,20 @@ const fetchResponder = async event => {
     await cache.put(event.request, clonedResponse);
   }
 
-  return response || cache.match(event.request);
+  return response;
+};
+
+const fetchResponder = async event => {
+  const cache = await caches.open(CACHES.offline);
+
+  const response = fetchFromNetwork(event, cache);
+
+  // Do network-first requests on documents, cache-first on everything else
+  if (CACHE_FIRST_TYPES.includes(event.request.destination)) {
+    return response || cache.match(event.request);
+  }
+
+  return (await cache.match(event.request)) || response;
 };
 
 self.addEventListener("install", event => {
