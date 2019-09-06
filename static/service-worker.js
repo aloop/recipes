@@ -1,10 +1,18 @@
-const CACHE_VERSION = "6";
+const CACHE_VERSION = "7";
 const OFFLINE_PAGE_URL = "/offline.html";
 const CACHES = {
   offline: `offline-v${CACHE_VERSION}`
 };
 const CACHE_NAMES = Object.values(CACHES);
 
+const CACHE_TYPES = [
+  "document",
+  "image",
+  "script",
+  "style",
+  "manifest",
+  "font"
+];
 const CACHE_FIRST_TYPES = ["document"];
 
 const activate = async () => {
@@ -42,7 +50,10 @@ const fetchFromNetwork = async (event, cache) => {
     return (await cache.match(event.request)) || cache.match(OFFLINE_PAGE_URL);
   }
 
-  if (response.status === 200) {
+  if (
+    response.status === 200 &&
+    CACHE_TYPES.includes(event.request.destination)
+  ) {
     const clonedResponse = response.clone();
     await cache.put(event.request, clonedResponse);
   }
