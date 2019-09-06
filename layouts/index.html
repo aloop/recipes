@@ -1,10 +1,12 @@
 {{ define "main" }}
 <h1>{{ .Site.Title }}</h1>
 <section id="recipes-search">
+  <label for="recipes-search-field" class="visuallyHidden">Recipe Search</label>
   <input
     placeholder="Search for a recipe"
     class="Search hidden@no-js hidden@print"
     id="recipes-search-field"
+    name="recipes-search-field"
     type="search"
     autofocus
   />
