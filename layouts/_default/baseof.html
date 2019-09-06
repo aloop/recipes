@@ -3,6 +3,8 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#70a9ff" />
+
     {{- block "meta" . }}{{ end }}
     <title>
       {{- block "title" . }}
@@ -14,6 +16,8 @@
         {{ end -}}
       {{ end -}}
     </title>
+    <link rel="manifest" href="/manifest.json" />
+    <link rel="apple-touch-icon" href="/images/icon-192.png">
 
     {{- with resources.Get "js/head-inline.js" | minify }}
     <script>
