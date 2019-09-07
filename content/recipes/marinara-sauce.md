@@ -7,7 +7,7 @@ author:
 ## Ingredients
 
 - 1-2 tablespoons Olive oil
-- 1/2 Onion, diced
+- ½ Onion, diced
 - 6-8 Garlic cloves, minced
 - 1 tablespoon Red Pepper Flakes
 - Dried Herbs (optional)
