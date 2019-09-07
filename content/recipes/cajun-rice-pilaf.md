@@ -9,7 +9,7 @@ author:
 - ½ stick (4 tablespoons) Butter
 - ½ Onion (about 1 cup), chopped
 - 1 Green Bell Pepper, chopped
-- 1/4 cup Celery, chopped
+- ¼ cup Celery, chopped
 - 2 cloves Garlic, minced
 - 1½ cups Long Grain Rice, uncooked
 - 2 teaspoons Cajun or Creole seasoning, or to taste
