@@ -19,7 +19,7 @@ const debounce = (fn, delay = 100, eager = true) => {
 
       if (!eager) {
         initialTimestamp = null;
-    }
+      }
     }
 
     const tick = timestamp => {
