@@ -5,8 +5,9 @@
 /**
  * @param {Function} fn
  * @param {number} delay
+ * @param {boolean} eager
  */
-const debounce = (fn, delay = 100) => {
+const debounce = (fn, delay = 100, eager = true) => {
   let initialTimestamp = null;
   let currentAnimationFrame = null;
 
@@ -15,6 +16,10 @@ const debounce = (fn, delay = 100) => {
     // We should cancel the last one if it's still pending.
     if (currentAnimationFrame) {
       cancelAnimationFrame(currentAnimationFrame);
+
+      if (!eager) {
+        initialTimestamp = null;
+    }
     }
 
     const tick = timestamp => {
