@@ -23,6 +23,9 @@ const debounce = (fn, delay = 100, eager = true) => {
     }
 
     const tick = timestamp => {
+      // The first time this function is run, `initialTimestamp` won't be set.
+      // So we'll set it to the current `timestamp` the requestAnimationFrame
+      // gave us.
       if (!initialTimestamp) {
         initialTimestamp = timestamp;
       }
@@ -32,16 +35,25 @@ const debounce = (fn, delay = 100, eager = true) => {
         return fn(...args);
       }
 
+      // Since `delay` hasn't elapsed if we've gotten here, recursively
+      // queue `tick` again for the next animation frame.
       currentAnimationFrame = requestAnimationFrame(tick);
     };
 
+    // Start the recursion
     currentAnimationFrame = requestAnimationFrame(tick);
   };
 };
 
+/**
+ * A simple memoize function, for functions that take a single argument.
+ *
+ * @param {Function} fn
+ */
 const memoize = fn => {
   const cache = {};
 
+  // `x` should only be a string, number, boolean, or Symbol.
   return x => (cache.hasOwnProperty(x) ? cache[x] : (cache[x] = fn(x)));
 };
 
