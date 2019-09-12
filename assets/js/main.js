@@ -51,10 +51,12 @@ const debounce = (fn, delay = 100, eager = true) => {
  * @param {Function} fn
  */
 const memoize = fn => {
-  const cache = {};
+  const cache = new Map();
 
-  // `x` should only be a string, number, boolean, or Symbol.
-  return x => (cache.hasOwnProperty(x) ? cache[x] : (cache[x] = fn(x)));
+  const memoizedFn = x =>
+    cache.has(x) ? cache.get(x) : cache.set(x, fn(x)).get(x);
+
+  return memoizedFn;
 };
 
 //
