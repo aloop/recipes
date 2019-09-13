@@ -274,6 +274,9 @@ const enableDarkMode = isOn => {
   }
 };
 
+const updateToggle = isOn =>
+  darkModeToggle !== null && (darkModeToggle.checked = isOn);
+
 const darkModeToggle = document.getElementById("dark-mode-toggle");
 
 if (darkModeToggle !== null) {
@@ -291,8 +294,23 @@ if (darkModeToggle !== null) {
 window.addEventListener("storage", ev => {
   if (ev.key === "use-dark-mode") {
     enableDarkMode(ev.newValue === "yes");
-    if (darkModeToggle) {
-      darkModeToggle.checked = ev.newValue === "yes";
-    }
+    updateToggle(ev.newValue === "yes");
   }
 });
+
+// Respond to changes for prefers-color-scheme
+
+const query = matchMedia("(prefers-color-scheme: dark)");
+
+const matchListener = ev => {
+  enableDarkMode(ev.matches);
+  updateToggle(ev.matches);
+  localStorage.setItem("use-dark-mode", ev.matches ? "yes" : "no");
+};
+
+// Safari doesn't currently support addEventListener on MediaQueryList
+if ("addEventListener" in query) {
+  query.addEventListener("change", matchListener);
+} else {
+  query.addListener(matchListener);
+}
