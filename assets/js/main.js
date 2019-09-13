@@ -264,6 +264,8 @@ if (searchInput !== null) {
 
 // Handle dark mode toggle
 
+const darkModeToggle = document.getElementById("dark-mode-toggle");
+
 const enableDarkMode = isOn => {
   if (isOn) {
     document.documentElement.classList.add("dark");
@@ -276,8 +278,6 @@ const enableDarkMode = isOn => {
 
 const updateToggle = isOn =>
   darkModeToggle !== null && (darkModeToggle.checked = isOn);
-
-const darkModeToggle = document.getElementById("dark-mode-toggle");
 
 if (darkModeToggle !== null) {
   darkModeToggle.checked = useDarkMode;
