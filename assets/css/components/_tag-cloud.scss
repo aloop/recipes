@@ -1,0 +1,16 @@
+.TagCloud {
+  list-style-type: none;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0;
+}
+
+.TagCloud-tag {
+  display: inline-block;
+  margin: 0 0.5rem 0.5rem 0;
+}
+
+.TagCloud-title {
+  margin: 0 0 var(--space);
+  border: none;
+}

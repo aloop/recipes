@@ -1,4 +1,5 @@
-html {
+html,
+html.light {
   // Font
   --font: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
     "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji",
@@ -15,29 +16,52 @@ html {
   --header-height: 1.875rem;
   // Color
   --bg-color: #fff;
-  --color: #181b1f;
-  --link-color: #1054bb;
+  --color: hsl(218, 13%, 11%);
+  --link-color: hsl(218, 86%, 39%);
   --search-bg: #fff;
-  --search-color: #181b1f;
+  --search-color: hsl(218, 13%, 11%);
   --heading-border-color: #0000001a;
-  --checkbox-bg: #333;
-  --checkbox-focused: #70a9ff;
+  --checkbox-bg: hsl(218, 14%, 22%);
+  --checkbox-focused: hsl(218, 100%, 72%);
+  --tag-bg: hsl(218, 14%, 85%);
+  --tag-bg-hover: hsl(218, 50%, 75%);
+  --tag-bg-selected: hsl(218, 86%, 39%);
+  --tag-color: hsl(218, 13%, 11%);
+  --tag-color-hover: hsl(218, 13%, 11%);
+  --tag-color-selected: #fff;
+}
+
+@mixin output-dark-mode-properties {
+  --bg-color: hsl(218, 13%, 11%);
+  --color: #eee;
+  --link-color: hsl(218, 100%, 72%);
+  --search-bg: hsl(218, 14%, 22%);
+  --search-color: #eee;
+  --heading-border-color: #ffffff1a;
+  --checkbox-bg: hsl(218, 100%, 72%);
+  --tag-bg: hsl(218, 14%, 22%);
+  --tag-bg-hover: hsl(217, 30%, 38%);
+  --tag-bg-selected: hsl(218, 100%, 72%);
+  --tag-color: #eee;
+  --tag-color-hover: #eee;
+  --tag-color-selected: hsl(218, 13%, 11%);
 }
 
 @media screen {
-  .dark {
-    --bg-color: #181b1f;
-    --color: #eee;
-    --link-color: #70a9ff;
-    --search-bg: #282c33;
-    --search-color: #eee;
-    --heading-border-color: #ffffff1a;
-    --checkbox-bg: #70a9ff;
+  html.dark {
+    @include output-dark-mode-properties;
+  }
+}
+
+@media screen and (prefers-color-scheme: dark) {
+  html {
+    @include output-dark-mode-properties;
   }
 }
 
 @media print {
-  html {
+  html,
+  html.light {
     --h2-size: 1.25rem;
     --h3-size: 1rem;
     --space: 0.5rem;

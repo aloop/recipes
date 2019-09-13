@@ -1,5 +1,8 @@
 ---
 title: "Pancakes"
+tags:
+  - sweet
+  - breakfast
 ---
 
 ## Ingredients

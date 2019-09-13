@@ -1,5 +1,10 @@
 ---
 title: "Lemon Bars"
+tags:
+  - baking
+  - dessert
+  - sweet
+  - tart
 ---
 
 ## Ingredients

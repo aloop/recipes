@@ -1,5 +1,7 @@
 ---
 title: "Instant Pot Greek Yogurt"
+tags:
+  - fermented
 ---
 
 ## Ingredients

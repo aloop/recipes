@@ -3,6 +3,11 @@ title: "Jim Lahey's No-Knead Bread"
 author:
   - "Jim Lahey"
   - "Mark Bittman"
+tags:
+  - bread
+  - baking
+  - fermented
+  - side
 ---
 
 ## Ingredients

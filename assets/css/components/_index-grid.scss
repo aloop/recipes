@@ -1,0 +1,30 @@
+.IndexGrid {
+  display: grid;
+  grid-template-areas:
+    "search search"
+    "tags tags"
+    "recipes recipes";
+  grid-template-columns: 1fr 12.5rem;
+  grid-template-rows: auto auto 1fr;
+}
+
+@media screen and (min-width: 42.5rem) {
+  .IndexGrid {
+    grid-template-areas:
+      "search search"
+      "recipes tags"
+      "recipes tags";
+  }
+}
+
+.IndexGrid-search {
+  grid-area: search;
+}
+
+.IndexGrid-recipes {
+  grid-area: recipes;
+}
+
+.IndexGrid-tags {
+  grid-area: tags;
+}

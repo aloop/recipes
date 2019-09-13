@@ -2,6 +2,10 @@
 title: "Marinara Sauce"
 author:
   - "Anthony Loop"
+tags:
+  - sauce
+  - pasta
+  - savory
 ---
 
 ## Ingredients

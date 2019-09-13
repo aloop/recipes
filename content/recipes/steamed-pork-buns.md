@@ -2,6 +2,12 @@
 title: "Steamed Pork Buns"
 author:
   - "Anthony Loop"
+tags:
+  - chinese
+  - savory
+  - meat
+  - bread
+  - fermented
 ---
 
 This recipe makes about 20 pork buns.

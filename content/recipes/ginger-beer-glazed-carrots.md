@@ -2,6 +2,8 @@
 title: "Ginger Beer Glazed Carrots"
 author:
   - "Alton Brown"
+tags:
+  - side
 ---
 
 ## Ingredients

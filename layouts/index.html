@@ -1,22 +1,37 @@
 {{ define "main" }}
 <h1>{{ .Site.Title }}</h1>
-<section id="recipes-search">
-  <label for="recipes-search-field" class="visuallyHidden">Recipe Search</label>
-  <input
-    placeholder="Search for a recipe"
-    class="Search hidden@no-js hidden@print"
-    id="recipes-search-field"
-    name="recipes-search-field"
-    type="search"
-  />
-</section>
-<section id="recipes-list">
-  <ul class="Recipes">
-    {{- range where .Site.RegularPages "Type" "recipes" }}
-    <li class="Recipes-item">
-      <a href="{{ .Permalink }}">{{ .Title }}</a>
-    </li>
-    {{- end }}
-  </ul>
-</section>
+<div class="IndexGrid">
+  <section id="recipes-search" class="IndexGrid-search hidden@no-js hidden@print">
+    <label for="recipes-search-field" class="visuallyHidden">Recipe Search</label>
+    <input
+      placeholder="Search for a recipe"
+      class="Search"
+      id="recipes-search-field"
+      name="recipes-search-field"
+      type="search"
+    />
+  </section>
+
+  {{- if gt (len .Site.Taxonomies.tags.ByCount) 0 }}
+  <section id="tag-cloud" class="IndexGrid-tags hidden@no-js hidden@print">
+    <h2 class="TagCloud-title">Tags</h2>
+    <ul class="TagCloud">
+      {{- range $order, $taxonomy := .Site.Taxonomies.tags.ByCount }}
+        {{- $tag := $taxonomy.Name }}
+        <li class="TagCloud-tag"><button class="Tag" data-tag="{{ $tag }}">{{ $tag }}</button></li>
+      {{- end }}
+    </ul>
+  </section>
+  {{- end }}
+
+  <section id="recipes-list" class="IndexGrid-recipes">
+    <ul class="Recipes">
+      {{- range where .Site.RegularPages "Type" "recipes" }}
+        <li class="Recipes-item"  data-tags='{{.Params.tags | jsonify }}'>
+          <a href="{{ .Permalink }}">{{ .Title }}</a>
+        </li>
+      {{- end }}
+    </ul>
+  </section>
+</div>
 {{ end }}

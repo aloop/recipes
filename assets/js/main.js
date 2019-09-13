@@ -22,6 +22,9 @@ const debounce = (fn, delay = 100, eager = true) => {
       }
     }
 
+    /**
+     * @param {number} timestamp
+     */
     const tick = timestamp => {
       // The first time this function is run, `initialTimestamp` won't be set.
       // So we'll set it to the current `timestamp` the requestAnimationFrame
@@ -90,13 +93,16 @@ const fuzzyMatch = (needle, haystack) => {
 };
 
 //
-// Search functionality
+// Search and Tag functionality
 //
 
 const linksSelector = ".Recipes > li > a";
+
 const classes = {
   hidden: "hidden",
-  weighted: "is-sequenceMatch"
+  weighted: "is-sequenceMatch",
+  tag: "Tag",
+  selectedTag: "is-selected"
 };
 
 const recipes = [];
@@ -151,17 +157,115 @@ if ("serviceWorker" in navigator) {
   navigator.serviceWorker.register("/service-worker.js");
 }
 
-// Handle searching if the search input exists
+// Handle searching and tag selections
+
 const searchInput = document.getElementById("recipes-search-field");
+const tagCloud = document.getElementById("tag-cloud");
+
+let clearActiveTags;
+
+if (tagCloud !== null) {
+  const buttons = tagCloud.querySelectorAll("[data-tag]");
+  const tags = {};
+
+  for (const button of buttons) {
+    tags[button.dataset.tag] = button;
+  }
+
+  // Keep a list of which tags are currently active
+  let activeTags = new Set();
+
+  const tagsMappedToRecipes = {};
+
+  // Create a WeakMap for each tag
+  for (const tag of Object.keys(tags)) {
+    tagsMappedToRecipes[tag] = new WeakMap();
+  }
+
+  // Get tags assigned to each recipe in the list, and add the recipe to each
+  // associated tag
+  for (const { el } of recipes) {
+    const recipeTags = JSON.parse(el.dataset.tags);
+    for (const tag of recipeTags) {
+      tagsMappedToRecipes[tag].set(el);
+    }
+  }
+
+  const toggleTag = tag => {
+    if (tags[tag].classList.contains(classes.selectedTag)) {
+      // Remove the active class on the tag element
+      tags[tag].classList.remove(classes.selectedTag);
+
+      activeTags.delete(tag);
+    } else {
+      tags[tag].classList.add(classes.selectedTag);
+      activeTags.add(tag);
+    }
+
+    for (const { el } of recipes) {
+      // Clear unwanted classes leftover from potential searches
+      el.classList.remove(classes.weighted);
+
+      // Initially, hide the element
+      el.classList.add(classes.hidden);
+
+      // If we don't have any active tags, change course and show the element.
+      // We only want to hide elements when there is at least one active tag
+      if (activeTags.size === 0) {
+        el.classList.remove(classes.hidden);
+      }
+
+      for (const activeTag of activeTags) {
+        if (tagsMappedToRecipes[activeTag].has(el)) {
+          el.classList.remove(classes.hidden);
+          break;
+        }
+      }
+    }
+  };
+
+  // This function is useful for allowing searches to clear active tags properly.
+  clearActiveTags = () => {
+    for (const activeTag of activeTags) {
+      tags[activeTag].classList.remove(classes.selectedTag);
+    }
+
+    activeTags.clear();
+  };
+
+  // Bind a single click handler to the parent container of our tag buttons
+  tagCloud.addEventListener("click", ev => {
+    // Make sure the element that was clicked is one of the buttons, otherwise
+    // bail out
+    if (!ev.target.classList.contains(classes.tag)) {
+      return;
+    }
+
+    // Clear search field on click
+    if (searchInput !== null) {
+      searchInput.value = "";
+    }
+
+    toggleTag(ev.target.dataset.tag);
+  });
+}
 
 if (searchInput !== null) {
   searchInput.addEventListener("input", createSearchListener());
+
+  if (clearActiveTags) {
+    // Clear selected tags on input
+    searchInput.addEventListener(
+      "input",
+      debounce(clearActiveTags, 200, false)
+    );
+  }
 }
 
 // Handle dark mode toggle
 
 const enableDarkMode = isOn => {
-  if (Boolean(isOn)) {
+  if (isOn) {
     document.documentElement.classList.add("dark");
     document.documentElement.classList.remove("light");
   } else {
@@ -172,7 +276,7 @@ const enableDarkMode = isOn => {
 
 const darkModeToggle = document.getElementById("dark-mode-toggle");
 
-if (darkModeToggle) {
+if (darkModeToggle !== null) {
   darkModeToggle.checked = useDarkMode;
 
   darkModeToggle.addEventListener("input", ev => {

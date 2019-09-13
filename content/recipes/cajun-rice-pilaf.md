@@ -2,6 +2,12 @@
 title: "Cajun Rice Pilaf"
 author:
   - "Anthony Loop"
+tags:
+  - cajun
+  - rice
+  - savory
+  - side
+  - dinner
 ---
 
 ## Ingredients

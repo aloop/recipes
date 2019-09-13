@@ -1,5 +1,9 @@
 ---
 title: "Butterscotch Brownies"
+tags:
+  - sweet
+  - baking
+  - dessert
 ---
 
 ## Ingredients
