@@ -40,6 +40,6 @@ Alternatively shape the dough and place in a metal bowl which has been lightly g
 
 At least 30 minutes before the dough is ready, heat the oven to 450°F. Put a 6- to 8-quart dutch oven in the oven as it heats.
 
-When the dough has finished rising, quickly and carefully remove the dutch oven from the oven and put the dough in seam-side up, then place the lid back on the dutch oven and put it back into the oven. Bake for 15 minutes, then remove the lid and bake for another 30-45 minutes, or until a thermometer in the center of the bread reads 209°F.
+When the dough has finished rising, quickly and carefully remove the dutch oven from the oven and put the dough in seam-side up, then place the lid back on the dutch oven and put it back into the oven. Bake for 30 minutes, then remove the lid and bake for another 25-45 minutes, or until the crust is golden brown and a thermometer in the center of the bread reads 209°F.
 
 When the bread is done, remove it from the dutch oven and place on a wire rack for at least 15 minutes before cutting.
