@@ -1,17 +1,9 @@
 a {
-  display: inline;
   color: var(--link-color);
-  text-decoration: none;
-  border: 0.0625em solid transparent;
-  border-bottom-color: currentColor;
-  border-radius: 0.125rem;
-  padding: 0.125rem;
-  box-decoration-break: clone;
+  text-decoration: underline;
 
   &:hover,
   &:focus {
-    color: var(--bg-color);
-    border-bottom-color: var(--link-color);
-    background: var(--link-color);
+    text-decoration: none;
   }
 }
