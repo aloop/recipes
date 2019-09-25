@@ -1,5 +1,4 @@
-html,
-html.light {
+html {
   // Font
   --font: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
     "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji",
@@ -21,8 +20,6 @@ html.light {
   --search-bg: #fff;
   --search-color: hsl(218, 13%, 11%);
   --heading-border-color: #0000001a;
-  --checkbox-bg: hsl(218, 14%, 22%);
-  --checkbox-focused: hsl(218, 100%, 72%);
   --tag-bg: hsl(218, 14%, 85%);
   --tag-bg-hover: hsl(218, 50%, 75%);
   --tag-bg-selected: hsl(218, 86%, 39%);
@@ -31,37 +28,25 @@ html.light {
   --tag-color-selected: #fff;
 }
 
-@mixin output-dark-mode-properties {
-  --bg-color: hsl(218, 13%, 11%);
-  --color: #eee;
-  --link-color: hsl(218, 100%, 72%);
-  --search-bg: hsl(218, 14%, 22%);
-  --search-color: #eee;
-  --heading-border-color: #ffffff1a;
-  --checkbox-bg: hsl(218, 100%, 72%);
-  --tag-bg: hsl(218, 14%, 22%);
-  --tag-bg-hover: hsl(217, 30%, 38%);
-  --tag-bg-selected: hsl(218, 100%, 72%);
-  --tag-color: #eee;
-  --tag-color-hover: #eee;
-  --tag-color-selected: hsl(218, 13%, 11%);
-}
-
-@media screen {
-  html.dark {
-    @include output-dark-mode-properties;
-  }
-}
-
 @media screen and (prefers-color-scheme: dark) {
   html {
-    @include output-dark-mode-properties;
+    --bg-color: hsl(218, 13%, 11%);
+    --color: #eee;
+    --link-color: hsl(218, 100%, 72%);
+    --search-bg: hsl(218, 14%, 22%);
+    --search-color: #eee;
+    --heading-border-color: #ffffff1a;
+    --tag-bg: hsl(218, 14%, 22%);
+    --tag-bg-hover: hsl(217, 30%, 38%);
+    --tag-bg-selected: hsl(218, 100%, 72%);
+    --tag-color: #eee;
+    --tag-color-hover: #eee;
+    --tag-color-selected: hsl(218, 13%, 11%);
   }
 }
 
 @media print {
-  html,
-  html.light {
+  html {
     --h2-size: 1.25rem;
     --h3-size: 1rem;
     --space: 0.5rem;
