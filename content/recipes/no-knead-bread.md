@@ -17,8 +17,8 @@ tags:
 ## Ingredients
 
 - 450g All-Purpose Flour or Bread Flour, plus more for dusting
-- 4.5g teaspoon Instant Yeast
-- 7g teaspoons Kosher or Sea Salt
+- 4.5g Instant Yeast
+- 7g Kosher or Sea Salt
 - 315g Warm Water (around 70°F)
 - Cornmeal or Wheat Bran as needed
 
