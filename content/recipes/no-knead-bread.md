@@ -7,20 +7,12 @@ tags:
   - side
 ---
 
-## Ratios
-
-- 100 parts flour
-- 1.5 parts salt
-- 0.25 parts instant yeast (minimum probably around 1 gram)
-- 70 parts water
-
 ## Ingredients
 
-- 450g All-Purpose Flour or Bread Flour, plus more for dusting
-- 1g Instant Yeast
-- 7g Kosher or Sea Salt
-- 315g Warm Water (around 70°F)
-- Cornmeal or Wheat Bran as needed
+- 430g All-Purpose Flour or Bread Flour, plus more for dusting
+- 1g Yeast
+- 8g Kosher or Sea Salt
+- 345g Warm Water (around 70°F)
 
 ## Directions
 
