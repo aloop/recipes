@@ -4,13 +4,13 @@ html {
     "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji",
     "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   --line-height: 1.4;
-  --h2-size: 1.4rem;
+  --h2-size: 1.6rem;
   --h3-size: 1.1rem;
   // Sizing
   --space: 1.25rem;
   --li-margin: #{1.25 * 0.15}rem;
   --p-margin: #{1.25 * 0.5}rem;
-  --page-width: 62.5rem;
+  --page-width: 45rem;
   --body-padding: 2rem 1rem 3rem 1rem;
   --header-height: 1.875rem;
   // Color
@@ -19,7 +19,6 @@ html {
   --link-color: hsl(218, 86%, 39%);
   --search-bg: #fff;
   --search-color: hsl(218, 13%, 11%);
-  --heading-border-color: #0000001a;
   --tag-bg: hsl(218, 14%, 85%);
   --tag-bg-hover: hsl(218, 50%, 75%);
   --tag-bg-selected: hsl(218, 86%, 39%);
@@ -35,7 +34,6 @@ html {
     --link-color: hsl(218, 100%, 72%);
     --search-bg: hsl(218, 14%, 22%);
     --search-color: #eee;
-    --heading-border-color: #ffffff1a;
     --tag-bg: hsl(218, 14%, 22%);
     --tag-bg-hover: hsl(217, 30%, 38%);
     --tag-bg-selected: hsl(218, 100%, 72%);
@@ -51,5 +49,6 @@ html {
     --h3-size: 1rem;
     --space: 0.5rem;
     --li-margin: 0;
+    --page-width: auto;
   }
 }
