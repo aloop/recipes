@@ -31,9 +31,13 @@
   <section id="recipes-list" class="IndexGrid-recipes">
     <ul class="Recipes">
       {{- range where .Site.RegularPages "Type" "recipes" }}
-        <li class="Recipes-item"  data-tags='{{.Params.tags | jsonify }}'>
+        {{- if (reflect.IsSlice .Params.tags) }}
+        <li class="Recipes-item"  data-tags='{{ .Params.tags | default (slice) | jsonify }}'>
           <a href="{{ .Permalink }}">{{ .Title }}</a>
         </li>
+        {{- else }}
+          {{ errorf "Invalid format for tags in recipe %q. Tags must be in a list." .Title }}
+        {{- end }}
       {{- end }}
     </ul>
   </section>
