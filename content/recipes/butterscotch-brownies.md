@@ -8,15 +8,15 @@ tags:
 
 ## Ingredients
 
-- ¾ cup Butter
-- 2¼ cups Firmly packed Dark Brown Sugar
+- ¾ cup (12 tablespoons or 1½ sticks) Butter
+- 2 cups Dark Brown Sugar, lightly packed
 - 2½ cups All-Purpose Flour
 - 2½ teaspoons Baking Powder
 - ½ teaspoon Kosher Salt
 - 3 Eggs
 - 1 teaspoon Pure Vanilla Extract
-- 1 cup Chocolate Chips
-- 1 cup Butterscotch Chips
+- ½ cup Chocolate Chips
+- ½ cup Butterscotch Chips
 
 ## Directions
 
