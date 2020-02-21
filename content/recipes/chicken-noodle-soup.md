@@ -6,7 +6,7 @@ tags:
   - soup
   - savory
   - meat
-  - pressure-cooker
+  - pressure cooker
 ---
 
 ## Ingredients

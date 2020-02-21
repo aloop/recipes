@@ -1,7 +1,7 @@
 ---
 title: "Instant Pot Greek Yogurt"
 tags:
-  - pressure-cooker
+  - pressure cooker
   - fermented
 ---
 

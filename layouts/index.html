@@ -22,7 +22,7 @@
     <ul class="TagCloud">
       {{- range $order, $taxonomy := .Site.Taxonomies.tags.ByCount }}
         {{- $tag := $taxonomy.Name }}
-        <li class="TagCloud-tag"><button class="Tag" data-tag="{{ $tag }}">{{ $tag }}</button></li>
+        <li class="TagCloud-tag"><button class="Tag" data-tag="{{ .Page.Title }}">{{ .Page.Title | title }}</button></li>
       {{- end }}
     </ul>
   </section>
