@@ -4,4 +4,6 @@ title = "Recipes"
 minify = true
 enableEmoji = true
 enableRobotsTXT = true
-disableKinds = ["taxonomy", "taxonomyTerms", "RSS", "sitemap"]
+disableKinds = ["RSS", "sitemap"]
+[taxonomies]
+  tag = "tags"
