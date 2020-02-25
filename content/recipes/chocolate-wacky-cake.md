@@ -13,8 +13,8 @@ tags:
 - 2 teaspoons Baking Soda
 - 1 teaspoon Salt
 - 6 tablespoons Unsweetened Cocoa Powder
-- 12 Tablespoons Vegetable Oil
-- 2 Tablespoons Vinegar (apple cider or white)
+- 12 tablespoons Vegetable Oil
+- 2 tablespoons Vinegar (apple cider or white)
 - 2 teaspoons Vanilla Extract
 - 2 cups Water (or coffee for extra depth of flavor)
 
