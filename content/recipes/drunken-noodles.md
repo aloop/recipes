@@ -12,7 +12,7 @@ tags:
 
 ### Noodles
 
-- 7oz Wide Cut Rice Noodles
+- 7oz Wide cut rice noodles
 
 ### Stir Fry
 
@@ -27,11 +27,11 @@ tags:
 
 ### Sauce
 
-- 3 tablespoons oyster sauce
-- 1½ tablespoons light soy sauce
-- 1½ tablespoons dark soy sauce
-- 2 teaspoons sugar
-- 1 tablespoon water
+- 3 tablespoons Oyster sauce
+- 1½ tablespoons Light soy sauce
+- 1½ tablespoons Dark soy sauce
+- 2 teaspoons Sugar
+- 1 tablespoon Water
 
 ## Instructions
 
