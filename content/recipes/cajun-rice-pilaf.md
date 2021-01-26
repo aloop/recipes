@@ -12,7 +12,7 @@ tags:
 
 ## Ingredients
 
-- ½ stick (4 tablespoons) Butter
+- ¼ stick (2 tablespoons) Butter
 - ½ Onion (about 1 cup), chopped
 - 1 Green Bell Pepper, chopped
 - ¼ cup Celery, chopped
@@ -23,7 +23,7 @@ tags:
 - ¼ teaspoon of Black Pepper, fresh ground
 - 1 Bay Leaf
 - 1 tablespoon Fresh Parsley, chopped
-- 2¾ cups Chicken Stock or Broth
+- 2¾ cups Chicken Broth
 
 ## Directions
 
