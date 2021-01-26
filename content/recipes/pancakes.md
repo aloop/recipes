@@ -7,19 +7,19 @@ tags:
 
 ## Ingredients
 
-- 1½ cups All-Purpose Flour
-- 3½ teaspoons Baking Powder
+- 2 cups (10oz) All-Purpose Flour
+- 3 tablespoons Sugar
+- 4 teaspoons Baking Powder
+- ½ teaspoon Baking Soda
 - 1 teaspoon Kosher Salt
-- 1 tablespoon Sugar
-- 1 teaspoon Pure Vanilla Extract
-- 3 tablespoons Butter, melted
-- 1 tablespoon Vegetable Oil (or other neutral-flavored oil)
-- 1¼ cups Milk
-- 1 Egg
+- 2 Large Eggs
+- ¼ cup Vegetable Oil (or other neutral-flavored oil)
+- 1½ cups Milk
+- 1 teaspoon Vanilla Extract
 
 ## Directions
 
-Sift dry ingredients together into a mixing bowl, then add wet ingredients and mix until combined.
+Whisk dry ingredients together in a mixing bowl. In a second bowl, add eggs and oil and mix until well combined, then mix in milk and vanilla extract. Add egg mixture to dry mixture and gently mix until just combined (should still be somewhat lumpy). Let the batter sit for 10 minutes before cooking.
 
 Heat your griddle or pan over medium-high heat, there is no need to grease the griddle/pan because there is enough fat in the batter. An additional benefit is that this will produce a more even browning on the surface of the pancake.
 
