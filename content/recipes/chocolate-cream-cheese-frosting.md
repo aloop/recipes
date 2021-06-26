@@ -1,5 +1,5 @@
 ---
-title: "Tangy Chocolate Frosting"
+title: "Chocolate Cream Cheese Frosting"
 tags:
   - sweet
   - dessert

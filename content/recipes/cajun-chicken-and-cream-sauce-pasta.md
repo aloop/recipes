@@ -1,5 +1,5 @@
 ---
-title: "Cajun Chicken and Cream Sauce Pasta"
+title: '"Cajun" Chicken and Cream Sauce Pasta'
 author:
   - "Anthony Loop"
 tags:
